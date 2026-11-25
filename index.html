@@ -102,22 +102,67 @@ tr.hl td{background:var(--soft);font-weight:700}
 footer{border-top:1px solid var(--line);margin-top:24px;padding-top:14px;color:var(--muted);font-size:.8rem;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 footer a{color:var(--muted)}
 @media (max-width:560px){.grid{grid-template-columns:1fr}.results{grid-template-columns:1fr}.stat.main b{font-size:1.55rem}.seg button{font-size:.85rem}}
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
-a.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;text-decoration:none;color:var(--text)}
-a.tile:hover{border-color:var(--accent)}
-a.tile b{display:block;font-size:.98rem;margin-bottom:4px}
-a.tile span{display:block;font-size:.82rem;color:var(--muted)}
-h2.cat{font-size:1.1rem;margin:26px 0 12px}
+
+body{background:linear-gradient(180deg,var(--soft) 0,var(--bg) 340px) no-repeat,var(--bg)}
+.hwrap{max-width:760px;margin:0 auto;padding:48px 20px 32px}
+.hero{text-align:center;margin-bottom:32px}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px 6px 8px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-size:.85rem;font-weight:700;color:var(--text);letter-spacing:.01em}
+.badge svg{width:26px;height:26px;flex:none}
+.hero h1{font-size:clamp(1.9rem,5vw,2.7rem);line-height:1.15;margin:18px 0 8px;letter-spacing:-.02em}
+.hero .langs{color:var(--muted);font-size:.95rem;margin:0 0 16px}
+.hero .lead{max-width:560px;margin:0 auto 6px;font-size:1.05rem;line-height:1.6;color:var(--text)}
+.hero .lead[lang="es"]{color:var(--muted);font-size:.98rem}
+.feats{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 18px;list-style:none;padding:0;margin:18px 0 0;font-size:.88rem;color:var(--muted)}
+.feats li{display:inline-flex;align-items:center;gap:6px}
+.feats svg{width:16px;height:16px;color:var(--accent);flex:none}
+.pick{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);text-align:center;margin:0 0 12px}
+.lgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+a.lc{display:flex;align-items:center;gap:14px;padding:18px;background:var(--card);border:1px solid var(--line);border-radius:16px;text-decoration:none;color:var(--text);box-shadow:0 1px 2px rgba(15,23,42,.04);transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
+a.lc:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 8px 24px rgba(15,23,42,.10)}
+a.lc:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.code{flex:none;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--accent);color:var(--bg);font-weight:800;font-size:.95rem;letter-spacing:.04em}
+.lc .t{flex:1;min-width:0}
+.lc b{display:block;font-size:1.1rem}
+.lc small{display:block;color:var(--muted);font-size:.83rem;line-height:1.4;margin-top:2px}
+.lc .arr{flex:none;width:20px;height:20px;color:var(--muted);transition:transform .15s ease,color .15s ease}
+a.lc:hover .arr{color:var(--accent);transform:translateX(2px)}
+.hfoot{display:block;margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem;text-align:center}
+.hfoot .disc{max-width:620px;margin:0 auto 12px;line-height:1.55}
+.hfoot nav{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 16px;margin-bottom:10px}
+.hfoot a{color:var(--text)}
+.hfoot a:hover{color:var(--accent)}
+@media (max-width:600px){.hwrap{padding-top:32px}.lgrid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){a.lc,.lc .arr{transition:none}a.lc:hover,a.lc:hover .arr{transform:none}}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1378483731222053"
      crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="wrap">
-  <h1>Free online calculators</h1>
-  <p class="sub">Choose your language · Elegí tu idioma · Escolha seu idioma · Wähle deine Sprache</p>
-  <div class="cards"><a class="tile" href="/en/" hreflang="en" lang="en"><b>English</b><span lang="en">Free online calculators</span></a><a class="tile" href="/es/" hreflang="es" lang="es"><b>Español</b><span lang="es">Calculadoras online gratis</span></a><a class="tile" href="/pt/" hreflang="pt" lang="pt"><b>Português</b><span lang="pt">Calculadoras online grátis</span></a><a class="tile" href="/de/" hreflang="de" lang="de"><b>Deutsch</b><span lang="de">Kostenlose Online-Rechner</span></a></div>
-  <footer><span>CalcFinanzasPro</span><span><a href="/en/privacy-policy.html" hreflang="en" lang="en">Privacy Policy</a> · <a href="/es/politica-de-privacidad.html" hreflang="es" lang="es">Política de privacidad</a> · <a href="/pt/politica-de-privacidade.html" hreflang="pt" lang="pt">Política de privacidade</a> · <a href="/de/datenschutz.html" hreflang="de" lang="de">Datenschutzerklärung</a></span></footer>
-</div>
+<main class="hwrap">
+  <header class="hero">
+    <span class="badge"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#0F172A"/><path d="M8 21.5l5-5 4 3.5 7-8" fill="none" stroke="#2dd4bf" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 12h4.5v4.5" fill="none" stroke="#2dd4bf" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>CalcFinanzasPro</span>
+    <h1>Financial calculators</h1>
+    <p class="langs" lang="es">Calculadoras financieras · <span lang="pt">Calculadoras financeiras</span> · <span lang="de">Finanzrechner</span></p>
+    <p class="lead">Free, fast and accurate tools to plan your personal finances, investments, loans and taxes.</p>
+    <p class="lead" lang="es">Herramientas gratuitas, rápidas y precisas para calcular tus finanzas personales, inversiones, préstamos e impuestos.</p>
+    <ul class="feats"><li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Free · Gratis</li><li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Instant results · Resultados al instante</li><li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Runs in your browser · Sin registro</li></ul>
+  </header>
+
+  <section aria-labelledby="pick">
+    <h2 class="pick" id="pick">Choose your language · Elegí tu idioma</h2>
+    <nav class="lgrid" aria-label="Language">
+    <a class="lc" href="/en/" hreflang="en" lang="en"><span class="code" aria-hidden="true">EN</span><span class="t"><b>English</b><small>18 free calculators · Finance, business & everyday</small></span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5l5.5 5.5-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="lc" href="/es/" hreflang="es" lang="es"><span class="code" aria-hidden="true">ES</span><span class="t"><b>Español</b><small>18 calculadoras gratis · Finanzas, negocios y vida diaria</small></span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5l5.5 5.5-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="lc" href="/pt/" hreflang="pt" lang="pt"><span class="code" aria-hidden="true">PT</span><span class="t"><b>Português</b><small>18 calculadoras grátis · Finanças, negócios e dia a dia</small></span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5l5.5 5.5-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="lc" href="/de/" hreflang="de" lang="de"><span class="code" aria-hidden="true">DE</span><span class="t"><b>Deutsch</b><small>18 kostenlose Rechner · Finanzen, Business & Alltag</small></span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5l5.5 5.5-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </nav>
+  </section>
+
+  <footer class="hfoot">
+    <p class="disc">The calculators are for informational and educational purposes only and do not constitute professional financial, tax or legal advice. <span lang="es">Las calculadoras son solo informativas y educativas y no constituyen asesoramiento financiero, impositivo ni legal profesional.</span></p>
+    <nav aria-label="Legal"><a href="/en/privacy-policy.html" hreflang="en" lang="en">Privacy Policy</a><a href="/es/politica-de-privacidad.html" hreflang="es" lang="es">Política de privacidad</a><a href="/pt/politica-de-privacidade.html" hreflang="pt" lang="pt">Política de privacidade</a><a href="/de/datenschutz.html" hreflang="de" lang="de">Datenschutzerklärung</a></nav>
+    <p style="margin:0">© 2026 CalcFinanzasPro</p>
+  </footer>
+</main>
 </body>
 </html>
