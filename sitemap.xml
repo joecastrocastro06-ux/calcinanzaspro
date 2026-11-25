@@ -616,4 +616,36 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://calcfinanzaspro.com/de/einheiten-umrechner.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://calcfinanzaspro.com/en/unit-converter.html"/>
   </url>
+  <url>
+    <loc>https://calcfinanzaspro.com/en/privacy-policy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://calcfinanzaspro.com/en/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://calcfinanzaspro.com/es/politica-de-privacidad.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://calcfinanzaspro.com/pt/politica-de-privacidade.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://calcfinanzaspro.com/de/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://calcfinanzaspro.com/en/privacy-policy.html"/>
+  </url>
+  <url>
+    <loc>https://calcfinanzaspro.com/es/politica-de-privacidad.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://calcfinanzaspro.com/en/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://calcfinanzaspro.com/es/politica-de-privacidad.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://calcfinanzaspro.com/pt/politica-de-privacidade.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://calcfinanzaspro.com/de/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://calcfinanzaspro.com/en/privacy-policy.html"/>
+  </url>
+  <url>
+    <loc>https://calcfinanzaspro.com/pt/politica-de-privacidade.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://calcfinanzaspro.com/en/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://calcfinanzaspro.com/es/politica-de-privacidad.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://calcfinanzaspro.com/pt/politica-de-privacidade.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://calcfinanzaspro.com/de/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://calcfinanzaspro.com/en/privacy-policy.html"/>
+  </url>
+  <url>
+    <loc>https://calcfinanzaspro.com/de/datenschutz.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://calcfinanzaspro.com/en/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://calcfinanzaspro.com/es/politica-de-privacidad.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://calcfinanzaspro.com/pt/politica-de-privacidade.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://calcfinanzaspro.com/de/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://calcfinanzaspro.com/en/privacy-policy.html"/>
+  </url>
 </urlset>
