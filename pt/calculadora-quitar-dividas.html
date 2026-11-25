@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Calculadora para quitar dívidas: bola de neve vs. avalanche</title>
+<meta name="description" content="Compare bola de neve vs. avalanche: veja quando você sai das dívidas, quanto paga de juros e qual dívida é quitada primeiro.">
+<link rel="canonical" href="https://calcfinanzaspro.com/pt/calculadora-quitar-dividas.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CalcFinanzasPro">
+<meta property="og:url" content="https://calcfinanzaspro.com/pt/calculadora-quitar-dividas.html">
+<meta property="og:title" content="Calculadora para quitar dívidas: bola de neve vs. avalanche">
+<meta property="og:description" content="Compare bola de neve vs. avalanche: veja quando você sai das dívidas, quanto paga de juros e qual dívida é quitada primeiro.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="de_DE">
+<link rel="alternate" hreflang="en" href="https://calcfinanzaspro.com/en/debt-payoff-calculator.html">
+<link rel="alternate" hreflang="es" href="https://calcfinanzaspro.com/es/calculadora-pago-deudas.html">
+<link rel="alternate" hreflang="pt" href="https://calcfinanzaspro.com/pt/calculadora-quitar-dividas.html">
+<link rel="alternate" hreflang="de" href="https://calcfinanzaspro.com/de/schuldentilgung-rechner.html">
+<link rel="alternate" hreflang="x-default" href="https://calcfinanzaspro.com/en/debt-payoff-calculator.html">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Calculadora de quitação de dívidas",
+   "url": "https://calcfinanzaspro.com/pt/calculadora-quitar-dividas.html",
+   "description": "Compare bola de neve vs. avalanche: veja quando você sai das dívidas, quanto paga de juros e qual dívida é quitada primeiro.",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any",
+   "inLanguage": "pt",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "BRL"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "pt",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "O que é melhor, bola de neve ou avalanche?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A avalanche costuma economizar mais juros porque ataca primeiro a maior taxa. A bola de neve quita antes os saldos pequenos, o que ajuda a manter a motivação. O melhor método é aquele que você vai manter."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Preciso continuar pagando o mínimo de cada dívida?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sim. Os dois métodos pagam o mínimo de todas as dívidas todo mês e direcionam todo o dinheiro extra para uma dívida alvo. Deixar de pagar o mínimo gera encargos e prejudica seu score de crédito."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "O que acontece quando uma dívida é quitada?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "O pagamento dela é repassado para a próxima dívida alvo. O total mensal não muda, mas fica concentrado em menos dívidas, e cada uma some mais rápido."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Vale a pena pagar mais que o mínimo?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Quase sempre. Mesmo um pequeno valor extra pode antecipar anos a quitação e economizar boa parte dos juros, como mostra a tabela de comparação."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#1b1f24;--muted:#5b6570;--line:#dfe3e8;--accent:#0f766e;--accent2:#b45309;--soft:#e6f4f2;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101418;--card:#181d23;--text:#e8ebef;--muted:#9aa5b1;--line:#2a323b;--accent:#2dd4bf;--accent2:#fbbf24;--soft:#12302d;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#101418;--card:#181d23;--text:#e8ebef;--muted:#9aa5b1;--line:#2a323b;--accent:#2dd4bf;--accent2:#fbbf24;--soft:#12302d;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:880px;margin:0 auto;padding:20px 16px 40px}
+.lang{display:flex;justify-content:flex-end;gap:6px;margin-bottom:10px;font-size:.85rem;flex-wrap:wrap}
+.lang a,.lang span{padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--muted);background:var(--card)}
+.lang span{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:700}
+.lang a:hover{border-color:var(--accent);color:var(--text)}
+h1{font-size:1.6rem;margin:0 0 4px}
+.sub{color:var(--muted);margin:0 0 20px}
+.sub a{color:var(--accent)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:16px}
+.card h2{font-size:1.05rem;margin:0 0 14px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.field,.f{display:flex;flex-direction:column;gap:4px;min-width:0}
+.field label,.f span{font-size:.85rem;font-weight:600}
+.f span{font-size:.78rem;color:var(--muted)}
+.field small{color:var(--muted);font-size:.75rem}
+input,select{width:100%;font:inherit;font-size:16px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--text)}
+input:focus,select:focus,button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.debt{display:grid;grid-template-columns:1.4fr 1fr .8fr 1fr auto;gap:10px;align-items:end;padding:12px;border:1px solid var(--line);border-radius:12px;margin-bottom:10px}
+.btn{font:inherit;font-size:.85rem;font-weight:600;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--text);cursor:pointer}
+.btn:hover:not(:disabled){border-color:var(--accent)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.seg button{font:inherit;font-size:.92rem;font-weight:600;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--muted);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.summary{background:var(--soft);border-radius:12px;padding:12px 14px;margin:0 0 14px;font-weight:600}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.82rem;color:var(--muted);margin-bottom:8px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+svg{width:100%;height:auto;display:block}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:440px;font-size:.88rem;font-variant-numeric:tabular-nums}
+th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{color:var(--muted);font-weight:600;font-size:.78rem;position:sticky;top:0;background:var(--card)}
+.msg{color:var(--accent2);font-size:.9rem;margin:12px 0 0}
+.msg:empty{display:none}
+.note{color:var(--muted);font-size:.78rem;margin-top:10px}
+.how p{margin:0 0 12px}
+.how ol{margin:0 0 14px;padding-left:20px}
+.how li{margin-bottom:6px}
+.tip{background:var(--soft);border-radius:12px;padding:12px 14px;margin:0 0 14px}
+.ex{border:1px solid var(--line);border-radius:12px;padding:14px;margin:0 0 14px;background:var(--bg)}
+.ex h3{font-size:.95rem;margin:0 0 8px}
+table.wrapt{min-width:0}
+table.wrapt th,table.wrapt td{white-space:normal;text-align:left;vertical-align:top}
+table.wrapt th{position:static;background:transparent}
+@media (max-width:560px){.grid{grid-template-columns:1fr}.debt{grid-template-columns:1fr 1fr}.debt .f:first-child{grid-column:1/-1}.debt .rm{grid-column:1/-1;justify-self:end}.seg button{font-size:.85rem}}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.top .lang{margin-bottom:0}
+.home{font-size:.85rem;color:var(--muted);text-decoration:none}
+.home:hover{color:var(--accent)}
+footer{border-top:1px solid var(--line);margin-top:24px;padding-top:14px;color:var(--muted);font-size:.8rem;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+footer a{color:var(--muted)}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.faq h3{font-size:.95rem;margin:14px 0 4px}
+.faq p{margin:0 0 10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="home" href="/pt/">← Todas as calculadoras</a>
+    <nav class="lang" aria-label="Idioma">
+    <a href="/en/debt-payoff-calculator.html" hreflang="en" lang="en">English</a>
+    <a href="/es/calculadora-pago-deudas.html" hreflang="es" lang="es">Español</a>
+    <span aria-current="page">Português</span>
+    <a href="/de/schuldentilgung-rechner.html" hreflang="de" lang="de">Deutsch</a>
+  </nav>
+  </header>
+
+  <h1>Calculadora de quitação de dívidas</h1>
+  <p class="sub">Compare os métodos bola de neve e avalanche e veja com que rapidez você pode ficar livre das dívidas. <a href="#how">Primeira vez aqui? Veja como funciona.</a></p>
+
+  <div class="card">
+    <h2>Suas dívidas</h2>
+    <div id="debts"></div>
+    <button type="button" class="btn" id="add">+ Adicionar dívida</button>
+    <div class="grid" style="margin-top:16px">
+      <div class="field"><label for="X">Pagamento extra mensal</label><input id="X" type="number" inputmode="decimal" min="0" step="any" value="200"><small>Somado aos seus pagamentos mínimos. Pode ser 0.</small></div>
+      <div class="field"><label for="rt">Tipo de taxa</label>
+        <select id="rt"><option value="nom" selected>Nominal anual (capitalizada mensalmente)</option><option value="eff">Efetiva anual</option></select></div>
+    </div>
+    <div class="actions"><button type="button" class="btn" id="reset">Restaurar valores</button><button type="button" class="btn pri" id="copy">Copiar resultado</button></div>
+    <p class="msg" id="msg" role="status"></p>
+  </div>
+
+  <div class="card">
+    <h2>Comparação</h2>
+    <p class="summary" id="summary" hidden></p>
+    <div class="tbl"><table id="cmp"></table></div>
+  </div>
+
+  <div class="card">
+    <h2>Dívida total ao longo do tempo</h2>
+    <div class="legend" id="legend"></div>
+    <svg id="chart" viewBox="0 0 640 300" role="img" aria-label="Gráfico da dívida total restante ao longo do tempo para cada método"></svg>
+  </div>
+
+  <div class="card">
+    <h2>Quando cada dívida é quitada</h2>
+    <div class="tbl"><table id="order"></table></div>
+  </div>
+
+  <div class="card">
+    <h2>Detalhamento ano a ano</h2>
+    <div class="seg" role="group" aria-label="Método">
+      <button type="button" id="m1" aria-pressed="false">Bola de neve</button>
+      <button type="button" id="m2" aria-pressed="true">Avalanche</button>
+    </div>
+    <div class="tbl"><table id="table"></table></div>
+  </div>
+
+  <div class="card how" id="how">
+    <h2>Como funciona</h2>
+    <p>Os dois métodos funcionam do mesmo jeito: você paga o mínimo de todas as dívidas e coloca <b>todo o dinheiro extra em uma dívida “alvo”</b>. A única diferença é qual dívida é o alvo.</p>
+    <ol>
+      <li>A <b>bola de neve</b> ataca primeiro a dívida com o <b>menor saldo</b>. Você quita dívidas rápido, o que ajuda a manter a motivação.</li>
+      <li>A <b>avalanche</b> ataca primeiro a dívida com a <b>maior taxa de juros</b>. Em geral, custa menos juros no total.</li>
+    </ol>
+    <div class="tip"><b>O que é o repasse (rollover)?</b> Quando uma dívida é quitada, você não gasta aquele pagamento com outra coisa: você o soma à próxima dívida-alvo. Seu pagamento mensal total nunca muda, mas ele se concentra em menos dívidas, então cada uma desaparece mais rápido. Esse é o efeito “bola de neve”.</div>
+    <div class="ex">
+      <h3>Um exemplo simples</h3>
+      <p>Você tem duas dívidas e pode pagar <b>R$ 250 por mês</b> no total: mínimos de R$ 50 e R$ 100, mais R$ 100 extras. Para simplificar, os juros são ignorados aqui.</p>
+      <div class="tbl"><table class="wrapt">
+        <thead><tr><th></th><th>Bola de neve</th><th>Avalanche</th></tr></thead>
+        <tbody>
+          <tr><td><b>Dívida-alvo</b></td><td>Dívida A (menor saldo: R$ 500)</td><td>Dívida B (maior taxa: 24%)</td></tr>
+          <tr><td><b>Pagamentos mensais no início</b></td><td>A: R$ 150 · B: R$ 100</td><td>A: R$ 50 · B: R$ 200</td></tr>
+          <tr><td><b>Quando a dívida-alvo é quitada</b></td><td>Os R$ 150 de A passam para B, que agora recebe R$ 250 por mês</td><td>Os R$ 200 de B passam para A, que agora recebe R$ 250 por mês</td></tr>
+          <tr><td><b>Resultado</b></td><td>Uma primeira vitória rápida: A some em cerca de 4 meses</td><td>A dívida cara de 24% diminui primeiro, então normalmente você paga menos juros</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">Juros reais mudam os prazos exatos, e por isso a calculadora acima faz as contas mês a mês.</p>
+    </div>
+    <button type="button" class="btn" id="try">Testar este exemplo na calculadora</button>
+    <div class="faq">
+    <h3 style="font-size:.98rem;margin-top:18px">Perguntas frequentes</h3>
+    <h3>O que é melhor, bola de neve ou avalanche?</h3><p>A avalanche costuma economizar mais juros porque ataca primeiro a maior taxa. A bola de neve quita antes os saldos pequenos, o que ajuda a manter a motivação. O melhor método é aquele que você vai manter.</p><h3>Preciso continuar pagando o mínimo de cada dívida?</h3><p>Sim. Os dois métodos pagam o mínimo de todas as dívidas todo mês e direcionam todo o dinheiro extra para uma dívida alvo. Deixar de pagar o mínimo gera encargos e prejudica seu score de crédito.</p><h3>O que acontece quando uma dívida é quitada?</h3><p>O pagamento dela é repassado para a próxima dívida alvo. O total mensal não muda, mas fica concentrado em menos dívidas, e cada uma some mais rápido.</p><h3>Vale a pena pagar mais que o mínimo?</h3><p>Quase sempre. Mesmo um pequeno valor extra pode antecipar anos a quitação e economizar boa parte dos juros, como mostra a tabela de comparação.</p>
+    </div>
+  </div>
+
+  <p class="note">A matemática por trás: a taxa mensal de cada dívida é i = r/12 (nominal) ou (1 + r)^(1/12) − 1 (efetiva). Seu orçamento mensal total é S = soma dos pagamentos mínimos + pagamento extra, e ele permanece constante. Todo mês, os juros são somados, cada dívida recebe seu pagamento mínimo e o que sobra de S vai para a dívida prioritária. Quando uma dívida é quitada, seu pagamento mínimo passa para a próxima. A bola de neve prioriza o menor saldo inicial; a avalanche, a maior taxa de juros. “Só mínimos” paga apenas os mínimos, sem extra e sem repasse. As simulações param após 100 anos. Esta ferramenta é apenas ilustrativa e não constitui aconselhamento financeiro.</p>
+  <footer><span>Calculadoras online grátis · Sem cadastro · Funcionam em qualquer dispositivo</span><a href="/pt/">Todas as calculadoras</a></footer>
+</div>
+
+<script>
+(function(){
+  var CUR = "R$", LOCALE = "pt-BR", view = "aval", MAXD = 8;
+  var $ = function(id){return document.getElementById(id);};
+  function money(v){return CUR + " " + v.toLocaleString(LOCALE,{minimumFractionDigits:2,maximumFractionDigits:2});}
+  function short(v){
+    var a=Math.abs(v);
+    if(a>=1e9) return CUR+" "+(v/1e9).toFixed(1).replace(".",",")+" bi";
+    if(a>=1e6) return CUR+" "+(v/1e6).toFixed(1).replace(".",",")+" mi";
+    if(a>=1e3) return CUR+" "+(v/1e3).toFixed(0)+" mil";
+    return CUR+" "+v.toFixed(0);
+  }
+  function term(N){
+    var y=Math.floor(N/12), m=N%12, s=[];
+    if(y) s.push(y+(y===1?" ano":" anos"));
+    if(m||!y) s.push(m+(m===1?" mês":" meses"));
+    return s.join(" ");
+  }
+  function sterm(N){
+    var y=Math.floor(N/12), m=N%12, s=[];
+    if(y) s.push(y+" a");
+    if(m||!y) s.push(m+" m");
+    return s.join(" ");
+  }
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+
+  function addRow(v){
+    v=v||{n:"",b:"",r:"",m:""};
+    var d=document.createElement("div"); d.className="debt";
+    d.innerHTML='<label class="f"><span>Nome (opcional)</span><input class="nm" type="text" value="'+esc(v.n)+'" maxlength="40"></label>'+
+      '<label class="f"><span>Saldo</span><input class="b" type="number" inputmode="decimal" min="0" step="any" value="'+v.b+'"></label>'+
+      '<label class="f"><span>Taxa (% ao ano)</span><input class="r" type="number" inputmode="decimal" min="0" step="any" value="'+v.r+'"></label>'+
+      '<label class="f"><span>Pagamento mínimo</span><input class="m" type="number" inputmode="decimal" min="0" step="any" value="'+v.m+'"></label>'+
+      '<button type="button" class="btn rm" aria-label="Remover esta dívida">Remover</button>';
+    $("debts").appendChild(d);
+    updateButtons();
+  }
+  function updateButtons(){
+    var n=document.querySelectorAll(".debt").length;
+    $("add").disabled = n>=MAXD;
+    document.querySelectorAll(".rm").forEach(function(b){b.disabled = n<=1;});
+  }
+  function readDebts(){
+    var out=[], eff=$("rt").value==="eff";
+    document.querySelectorAll(".debt").forEach(function(el,k){
+      var B=parseFloat(el.querySelector(".b").value);
+      if(isNaN(B)||B<=0) return;
+      var r=parseFloat(el.querySelector(".r").value), m=parseFloat(el.querySelector(".m").value);
+      r=(isNaN(r)||r<0)?0:r; m=(isNaN(m)||m<0)?0:m;
+      var i=eff?Math.pow(1+r/100,1/12)-1:r/100/12;
+      out.push({name:el.querySelector(".nm").value.trim()||("Dívida "+(k+1)),B:B,i:i,m:m});
+    });
+    return out;
+  }
+
+  function sim(debts,method,S){
+    var D=debts.map(function(d){return {bal:d.B,i:d.i,m:d.m,done:null};});
+    var order=D.map(function(_,k){return k;});
+    if(method==="snow") order.sort(function(a,b){return debts[a].B-debts[b].B||a-b;});
+    if(method==="aval") order.sort(function(a,b){return debts[b].i-debts[a].i||debts[a].B-debts[b].B||a-b;});
+    var total=D.reduce(function(s,d){return s+d.bal;},0);
+    var bals=[total], rows=[], intT=0, paidT=0, yS=total, yP=0, yI=0, t=0, ok=false;
+    while(t<1200){
+      t++;
+      var mi=0, pay=0;
+      D.forEach(function(d){if(d.bal>0){var it=d.bal*d.i; d.bal+=it; mi+=it;}});
+      D.forEach(function(d){if(d.bal>0){var p=Math.min(d.m,d.bal); d.bal-=p; pay+=p;}});
+      if(method!=="min"){
+        var pool=S-pay;
+        for(var q=0;q<order.length&&pool>0;q++){
+          var d=D[order[q]];
+          if(d.bal>0){var p=Math.min(pool,d.bal); d.bal-=p; pool-=p; pay+=p;}
+        }
+      }
+      var tb=0;
+      D.forEach(function(d){
+        if(d.done===null&&d.bal<=1e-9){d.bal=0;d.done=t;}
+        tb+=d.bal;
+      });
+      bals.push(tb); intT+=mi; paidT+=pay; yP+=pay; yI+=mi;
+      if(t%12===0||tb===0){
+        rows.push({label:t%12===0?String(t/12):(Math.floor(t/12)+" a "+(t%12)+" m"),start:yS,pay:yP,interest:yI,end:tb});
+        yS=tb;yP=0;yI=0;
+      }
+      if(tb===0){ok=true;break;}
+      if(tb>1e12) break;
+    }
+    var first=null;
+    D.forEach(function(d){if(d.done!==null&&(first===null||d.done<first)) first=d.done;});
+    return {ok:ok,N:t,interest:intT,paid:paidT,first:first,bals:bals,rows:rows,done:D.map(function(d){return d.done;})};
+  }
+
+  function summary(sn,av){
+    if(!sn.ok&&!av.ok) return "";
+    if(!sn.ok) return "Só a avalanche quita suas dívidas em 100 anos com esses pagamentos.";
+    if(!av.ok) return "Só a bola de neve quita suas dívidas em 100 anos com esses pagamentos.";
+    var d=sn.interest-av.interest, dm=sn.N-av.N, s;
+    if(Math.abs(d)<0.005&&dm===0) s="Com essas dívidas, os dois métodos dão o mesmo total de juros e o mesmo prazo.";
+    else if(d>=0.005) s="A avalanche economiza "+money(d)+" em juros"+(dm>0?" e deixa você livre das dívidas "+term(dm)+" antes":"")+" em comparação com a bola de neve.";
+    else if(d<=-0.005) s="A bola de neve economiza "+money(-d)+" em juros"+(dm<0?" e deixa você livre das dívidas "+term(-dm)+" antes":"")+" em comparação com a avalanche.";
+    else s=dm>0?"A avalanche deixa você livre das dívidas "+term(dm)+" antes.":"A bola de neve deixa você livre das dívidas "+term(-dm)+" antes.";
+    if(sn.first<av.first) s+=" A bola de neve quita sua primeira dívida "+term(av.first-sn.first)+" antes.";
+    else if(av.first<sn.first) s+=" A avalanche quita sua primeira dívida "+term(sn.first-av.first)+" antes.";
+    return s;
+  }
+
+  function clearAll(msg){
+    $("msg").textContent=msg||"";
+    $("summary").hidden=true;
+    ["cmp","legend","chart","order","table"].forEach(function(id){$(id).innerHTML="";});
+  }
+
+  function render(){
+    var debts=readDebts(), X=parseFloat($("X").value); X=(isNaN(X)||X<0)?0:X;
+    if(!debts.length){clearAll("Adicione pelo menos uma dívida com saldo maior que zero.");return;}
+    var sumMin=debts.reduce(function(s,d){return s+d.m;},0), S=sumMin+X;
+    if(S<=0){clearAll("Informe um pagamento mínimo ou um pagamento extra.");return;}
+
+    var sn=sim(debts,"snow",S), av=sim(debts,"aval",S), mn=sim(debts,"min",S);
+    var warn=[];
+    if(!sn.ok&&!av.ok) warn.push("Com esses pagamentos, suas dívidas não são quitadas em 100 anos. Tente aumentar os pagamentos.");
+    if(!mn.ok){
+      var bad=debts.filter(function(d){return d.m<=d.B*d.i;}).map(function(d){return d.name;});
+      if(bad.length) warn.push("O pagamento mínimo de "+bad.join(", ")+" não cobre os juros mensais, então o saldo cresce se você não fizer pagamentos extras.");
+    }
+    $("msg").textContent=warn.join(" ");
+
+    var sm=summary(sn,av);
+    $("summary").hidden=!sm; $("summary").textContent=sm;
+
+    var cell=function(r,f){return r.ok?f(r):"Não em 100 anos";};
+    var save=function(r){return (mn.ok&&r.ok)?money(mn.interest-r.interest):"—";};
+    $("cmp").innerHTML='<thead><tr><th></th><th>Bola de neve</th><th>Avalanche</th><th>Só mínimos</th></tr></thead><tbody>'+
+      '<tr><td>Livre das dívidas em</td>'+[sn,av,mn].map(function(r){return '<td>'+cell(r,function(x){return term(x.N);})+'</td>';}).join('')+'</tr>'+
+      '<tr><td>Juros totais</td>'+[sn,av,mn].map(function(r){return '<td>'+cell(r,function(x){return money(x.interest);})+'</td>';}).join('')+'</tr>'+
+      '<tr><td>Total pago</td>'+[sn,av,mn].map(function(r){return '<td>'+cell(r,function(x){return money(x.paid);})+'</td>';}).join('')+'</tr>'+
+      '<tr><td>Primeira dívida quitada em</td>'+[sn,av,mn].map(function(r){return '<td>'+(r.first===null?"—":term(r.first))+'</td>';}).join('')+'</tr>'+
+      '<tr><td>Juros economizados vs. só mínimos</td><td>'+save(sn)+'</td><td>'+save(av)+'</td><td>—</td></tr></tbody>';
+
+    $("legend").innerHTML='<span><i style="background:var(--accent)"></i>Bola de neve</span><span><i style="background:var(--accent2)"></i>Avalanche</span>'+(mn.ok?'<span><i style="background:var(--muted);opacity:.6"></i>Só mínimos</span>':'');
+    drawChart([{b:sn.bals,c:"var(--accent)",w:3},{b:av.bals,c:"var(--accent2)",w:3,d:"2 0"}].concat(mn.ok?[{b:mn.bals,c:"var(--muted)",w:2,d:"6 4"}]:[]));
+
+    var dn=function(r,k){return r.done[k]===null?"Não é quitada":"Mês "+r.done[k]+" ("+sterm(r.done[k])+")";};
+    $("order").innerHTML='<thead><tr><th>Dívida</th><th>Bola de neve</th><th>Avalanche</th><th>Só mínimos</th></tr></thead><tbody>'+
+      debts.map(function(d,k){return '<tr><td>'+esc(d.name)+'</td><td>'+dn(sn,k)+'</td><td>'+dn(av,k)+'</td><td>'+dn(mn,k)+'</td></tr>';}).join('')+'</tbody>';
+
+    var cur=view==="snow"?sn:av;
+    $("table").innerHTML=cur.ok?'<thead><tr><th>Ano</th><th>Saldo inicial</th><th>Pagamentos</th><th>Juros</th><th>Saldo final</th></tr></thead><tbody>'+
+      cur.rows.map(function(x){return '<tr><td>'+x.label+'</td><td>'+money(x.start)+'</td><td>'+money(x.pay)+'</td><td>'+money(x.interest)+'</td><td>'+money(x.end)+'</td></tr>';}).join('')+'</tbody>':'';
+  }
+
+  function drawChart(series){
+    var W=640,H=300,L=72,R=14,T=12,B=30,pw=W-L-R,ph=H-T-B;
+    var nMax=1, vMax=0;
+    series.forEach(function(s){nMax=Math.max(nMax,s.b.length-1);s.b.forEach(function(v){vMax=Math.max(vMax,v);});});
+    var tMax=nMax/12; if(vMax<=0) vMax=1;
+    var mag=Math.pow(10,Math.floor(Math.log10(vMax))), nice=[1,2,2.5,5,10], step=mag;
+    for(var i=0;i<nice.length;i++){step=nice[i]*mag/4; if(step*4>=vMax) break;}
+    var top=step*4;
+    var X=function(t){return L+pw*t/tMax;}, Y=function(v){return T+ph-ph*v/top;};
+    var s='';
+    for(var j=0;j<=4;j++){
+      var yv=step*j, y=Y(yv);
+      s+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+y+'" y2="'+y+'" stroke="var(--line)"/><text x="'+(L-8)+'" y="'+(y+4)+'" text-anchor="end" font-size="11" fill="var(--muted)">'+short(yv)+'</text>';
+    }
+    var ticks=Math.min(6,Math.max(1,Math.ceil(tMax))), tstep=Math.max(1,Math.ceil(tMax/ticks));
+    for(var t=0;t<=tMax+1e-9;t+=tstep){
+      s+='<text x="'+X(t)+'" y="'+(H-8)+'" text-anchor="middle" font-size="11" fill="var(--muted)">'+(Math.round(t*10)/10)+' a</text>';
+    }
+    series.forEach(function(sr){
+      var step2=Math.max(1,Math.floor(sr.b.length/300)), d="";
+      for(var k=0;k<sr.b.length;k+=step2) d+=(d?"L":"M")+X(k/12).toFixed(1)+" "+Y(sr.b[k]).toFixed(1);
+      var last=sr.b.length-1; if((last%step2)!==0) d+="L"+X(last/12).toFixed(1)+" "+Y(sr.b[last]).toFixed(1);
+      s+='<path d="'+d+'" fill="none" stroke="'+sr.c+'" stroke-width="'+sr.w+'"'+(sr.d?' stroke-dasharray="'+sr.d+'"':'')+' stroke-linejoin="round"/>';
+    });
+    $("chart").innerHTML=s;
+  }
+
+  function setView(v){
+    view=v;
+    $("m1").setAttribute("aria-pressed",v==="snow");
+    $("m2").setAttribute("aria-pressed",v==="aval");
+    render();
+  }
+  $("add").addEventListener("click",function(){addRow();render();});
+  $("debts").addEventListener("click",function(e){
+    var b=e.target.closest(".rm");
+    if(b&&!b.disabled){b.closest(".debt").remove();updateButtons();render();}
+  });
+  $("debts").addEventListener("input",render);
+  $("X").addEventListener("input",render);
+  $("rt").addEventListener("change",render);
+  $("m1").addEventListener("click",function(){setView("snow");});
+  $("m2").addEventListener("click",function(){setView("aval");});
+  $("try").addEventListener("click",function(){
+    $("debts").innerHTML="";
+    addRow({n:"Dívida A",b:500,r:10,m:50});
+    addRow({n:"Dívida B",b:2000,r:24,m:100});
+    $("X").value=100; $("rt").value="nom";
+    render();
+    $("cmp").scrollIntoView({behavior:"smooth",block:"center"});
+  });
+
+  addRow({n:"Cartão de crédito",b:5000,r:22,m:150});
+  addRow({n:"Financiamento do carro",b:8000,r:7,m:250});
+  addRow({n:"Empréstimo pessoal",b:2500,r:12,m:100});
+  var DEF=[].map.call(document.querySelectorAll(".debt"),function(el){return {n:el.querySelector(".nm").value,b:el.querySelector(".b").value,r:el.querySelector(".r").value,m:el.querySelector(".m").value};}),DX=$("X").value,DRT=$("rt").value,DCUR=$("cur")?$("cur").value:null;
+  $("reset").addEventListener("click",function(){$("debts").innerHTML="";DEF.forEach(function(d){addRow(d);});$("X").value=DX;$("rt").value=DRT;if(DCUR!==null)$("cur").value=DCUR;render();});
+  $("copy").addEventListener("click",function(){var b=$("copy"),t=[$("summary").hidden?"":$("summary").textContent].concat([].map.call($("cmp").querySelectorAll("tr"),function(tr){return [].map.call(tr.children,function(c){return c.textContent;}).join(" | ");})).filter(Boolean).join("\n");
+    var done=function(){var o=b.getAttribute("data-label")||b.textContent;b.setAttribute("data-label",o);b.textContent="Copiado!";setTimeout(function(){b.textContent=o;},1500);};
+    var fb=function(){var a=document.createElement("textarea");a.value=t;a.style.position="fixed";a.style.opacity="0";document.body.appendChild(a);a.select();try{document.execCommand("copy");}catch(e){}document.body.removeChild(a);done();};
+    if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(t).then(done,fb);else fb();});
+  render();
+})();
+</script>
+</body>
+</html>

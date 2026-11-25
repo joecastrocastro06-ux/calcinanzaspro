@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Simulador de financiamento imobiliário</title>
+<meta name="description" content="Simule a prestação do financiamento imobiliário com IPTU e seguro. Veja o valor financiado, os juros totais e a amortização ano a ano.">
+<link rel="canonical" href="https://calcfinanzaspro.com/pt/calculadora-financiamento-imobiliario.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CalcFinanzasPro">
+<meta property="og:url" content="https://calcfinanzaspro.com/pt/calculadora-financiamento-imobiliario.html">
+<meta property="og:title" content="Simulador de financiamento imobiliário">
+<meta property="og:description" content="Simule a prestação do financiamento imobiliário com IPTU e seguro. Veja o valor financiado, os juros totais e a amortização ano a ano.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="de_DE">
+<link rel="alternate" hreflang="en" href="https://calcfinanzaspro.com/en/mortgage-calculator.html">
+<link rel="alternate" hreflang="es" href="https://calcfinanzaspro.com/es/calculadora-hipoteca.html">
+<link rel="alternate" hreflang="pt" href="https://calcfinanzaspro.com/pt/calculadora-financiamento-imobiliario.html">
+<link rel="alternate" hreflang="de" href="https://calcfinanzaspro.com/de/hypotheken-rechner.html">
+<link rel="alternate" hreflang="x-default" href="https://calcfinanzaspro.com/en/mortgage-calculator.html">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Calculadora de financiamento imobiliário",
+   "url": "https://calcfinanzaspro.com/pt/calculadora-financiamento-imobiliario.html",
+   "description": "Simule a prestação do financiamento imobiliário com IPTU e seguro. Veja o valor financiado, os juros totais e a amortização ano a ano.",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any",
+   "inLanguage": "pt",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "BRL"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "pt",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Quanto devo dar de entrada?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Os bancos costumam financiar até 80% do imóvel, então a entrada mínima costuma ser de 20%. Quanto maior a entrada, menores a parcela e os juros totais."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "É possível usar o FGTS?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sim, em imóveis residenciais dentro das regras do Sistema Financeiro de Habitação o FGTS pode compor a entrada ou amortizar o saldo. Basta incluir esse valor na entrada."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "A calculadora usa Price ou SAC?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Usa a Tabela Price (parcelas fixas). No SAC, muito comum no Brasil, as parcelas começam mais altas e caem; use a calculadora de empréstimo para comparar os dois sistemas."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Por que o saldo cai devagar no começo?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Porque as primeiras parcelas são formadas principalmente por juros, calculados sobre um saldo alto. Com o tempo, a amortização ganha peso."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#1b1f24;--muted:#5b6570;--line:#dfe3e8;--accent:#0f766e;--accent2:#b45309;--soft:#e6f4f2;--c3:#2563eb;--c4:#9333ea;--bad:#dc2626;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101418;--card:#181d23;--text:#e8ebef;--muted:#9aa5b1;--line:#2a323b;--accent:#2dd4bf;--accent2:#fbbf24;--soft:#12302d;--c3:#60a5fa;--c4:#c084fc;--bad:#f87171;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#101418;--card:#181d23;--text:#e8ebef;--muted:#9aa5b1;--line:#2a323b;--accent:#2dd4bf;--accent2:#fbbf24;--soft:#12302d;--c3:#60a5fa;--c4:#c084fc;--bad:#f87171;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:880px;margin:0 auto;padding:20px 16px 40px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.home{font-size:.85rem;color:var(--muted);text-decoration:none}
+.home:hover{color:var(--accent)}
+.lang{display:flex;justify-content:flex-end;gap:6px;font-size:.85rem;flex-wrap:wrap}
+.lang a,.lang span{padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--muted);background:var(--card)}
+.lang span{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:700}
+.lang a:hover{border-color:var(--accent);color:var(--text)}
+h1{font-size:1.6rem;margin:0 0 4px}
+.sub{color:var(--muted);margin:0 0 20px}
+.sub a{color:var(--accent)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:16px}
+.card h2{font-size:1.05rem;margin:0 0 14px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.field{display:flex;flex-direction:column;gap:4px;min-width:0}
+.field label,.field .lbl{font-size:.85rem;font-weight:600}
+.field small{color:var(--muted);font-size:.75rem}
+input,select{width:100%;font:inherit;font-size:16px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--text)}
+input:focus,select:focus,button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.combo{display:grid;grid-template-columns:1fr auto;gap:8px}
+.combo select{width:auto;max-width:11rem}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.seg{display:grid;gap:8px}
+.seg button,.chips button{font:inherit;font-size:.92rem;font-weight:600;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--muted);cursor:pointer}
+.seg button[aria-pressed="true"],.chips button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.chips button{padding:6px 12px;font-size:.85rem;border-radius:999px}
+.btn{font:inherit;font-size:.85rem;font-weight:600;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--text);cursor:pointer}
+.btn:hover:not(:disabled){border-color:var(--accent)}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.btn.sm{padding:4px 10px;font-size:.78rem}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.results{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.stat{background:var(--soft);border-radius:12px;padding:12px 14px;min-width:0}
+.stat span{display:block;font-size:.78rem;color:var(--muted)}
+.stat b{display:block;font-size:1.25rem;overflow-wrap:anywhere}
+.stat em{display:block;font-style:normal;font-size:.78rem;color:var(--muted)}
+.stat.main{grid-column:1/-1}
+.stat.main b{font-size:1.8rem;color:var(--accent)}
+.summary{background:var(--soft);border-radius:12px;padding:12px 14px;margin:0 0 14px;font-weight:600}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.82rem;color:var(--muted);margin-bottom:8px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+svg{width:100%;height:auto;display:block}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:440px;font-size:.88rem;font-variant-numeric:tabular-nums}
+th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{color:var(--muted);font-weight:600;font-size:.78rem;position:sticky;top:0;background:var(--card)}
+tr.hl td{background:var(--soft);font-weight:700}
+.msg{color:var(--accent2);font-size:.9rem;margin:12px 0 0}
+.msg:empty{display:none}
+.note{color:var(--muted);font-size:.78rem;margin-top:10px}
+.how p{margin:0 0 12px}
+.how h3{font-size:.98rem;margin:18px 0 8px}
+.how ol,.how ul{margin:0 0 14px;padding-left:20px}
+.how li{margin-bottom:6px}
+.formula{background:var(--soft);border-radius:12px;padding:12px 14px;margin:0 0 14px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.86rem;overflow-x:auto;line-height:1.7}
+.tip{background:var(--soft);border-radius:12px;padding:12px 14px;margin:0 0 14px}
+.ex{border:1px solid var(--line);border-radius:12px;padding:14px;margin:0 0 14px;background:var(--bg)}
+.ex ol{margin-bottom:0}
+.faq h3{font-size:.95rem;margin:14px 0 4px}
+.faq p{margin:0 0 10px;color:var(--text)}
+.ad{margin:0 0 16px;min-height:90px;display:flex;align-items:center;justify-content:center}
+.ad:empty{display:none}
+.mod{border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px}
+.mod h3{font-size:.95rem;margin:0 0 10px}
+.inl{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-weight:600}
+.inl input{width:8.5rem}
+.out{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--soft);border-radius:10px;padding:10px 12px;margin-top:10px;flex-wrap:wrap}
+.out b{font-size:1.3rem;color:var(--accent);overflow-wrap:anywhere}
+.out small{display:block;color:var(--muted);font-size:.8rem;width:100%}
+footer{border-top:1px solid var(--line);margin-top:24px;padding-top:14px;color:var(--muted);font-size:.8rem;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+footer a{color:var(--muted)}
+@media (max-width:560px){.grid{grid-template-columns:1fr}.results{grid-template-columns:1fr}.stat.main b{font-size:1.55rem}.seg button{font-size:.85rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="home" href="/pt/">← Todas as calculadoras</a>
+    <nav class="lang" aria-label="Idioma">
+    <a href="/en/mortgage-calculator.html" hreflang="en" lang="en">English</a>
+    <a href="/es/calculadora-hipoteca.html" hreflang="es" lang="es">Español</a>
+    <span aria-current="page">Português</span>
+    <a href="/de/hypotheken-rechner.html" hreflang="de" lang="de">Deutsch</a>
+    </nav>
+  </header>
+
+  <h1>Calculadora de financiamento imobiliário</h1>
+  <p class="sub">Estime a prestação completa, com IPTU e seguro incluídos. <a href="#how">Primeira vez? Veja como funciona.</a></p>
+
+  <div class="ad" data-slot="top" aria-label="Publicidade"><!-- AdSense: top slot --></div>
+
+  <div class="card" id="calc">
+    <h2>Seus dados</h2>
+    <div class="grid">
+      <div class="field"><label for="V">Valor do imóvel</label><input id="V" type="number" inputmode="decimal" min="0" step="any" value="300000"></div>
+      <div class="field"><label for="D">Entrada</label><div class="combo"><input id="D" type="number" inputmode="decimal" min="0" step="any" value="20"><select id="Du" aria-label="Entrada"><option value="pct" selected>%</option><option value="amt">valor</option></select></div></div>
+      <div class="field" style="grid-column:1/-1"><span class="lbl">Prazo (anos)</span><input type="hidden" id="Y" value="30"><div class="seg" style="grid-template-columns:repeat(5,1fr)" role="group" aria-label="Prazo (anos)" data-for="Y"><button type="button" data-v="10" aria-pressed="false">10</button><button type="button" data-v="15" aria-pressed="false">15</button><button type="button" data-v="20" aria-pressed="false">20</button><button type="button" data-v="25" aria-pressed="false">25</button><button type="button" data-v="30" aria-pressed="true">30</button></div></div>
+      <div class="field"><label for="r">Taxa de juros anual (%)</label><input id="r" type="number" inputmode="decimal" min="0" max="50" step="any" value="6.5"></div>
+      <div class="field"><label for="tx">IPTU anual</label><input id="tx" type="number" inputmode="decimal" min="0" step="any" value="3600"></div>
+      <div class="field"><label for="ins">Seguro mensal</label><input id="ins" type="number" inputmode="decimal" min="0" step="any" value="100"><small>Opcional. Pode somar condomínio aqui.</small></div>
+    </div>
+    <div class="actions"><button type="button" class="btn" id="reset">Restaurar valores</button><button type="button" class="btn pri" id="copy">Copiar resultado</button></div>
+    <p class="msg" id="msg" role="status"></p>
+  </div>
+
+  <div class="card">
+    <h2>Resultados</h2>
+    <div class="results" id="results"></div>
+  </div>
+
+  <div class="card">
+    <h2>Composição da primeira prestação</h2>
+    <div class="legend" id="legend"></div>
+    <svg id="chart" viewBox="0 0 640 300" role="img" aria-label="Composição da primeira prestação"></svg>
+  </div>
+
+  <div class="card">
+    <h2>Resumo anual da amortização</h2>
+    <div class="tbl"><table id="table"></table></div>
+    
+  </div>
+
+
+  <div class="ad" data-slot="middle" aria-label="Publicidade"><!-- AdSense: in-content slot --></div>
+
+  <div class="card how" id="how">
+    <h2>Como funciona</h2>
+    <h3>O que esta calculadora faz</h3>
+    <p>Esta calculadora estima a prestação mensal completa do financiamento imobiliário: amortização e juros, mais IPTU e seguro. Ela também mostra quanto você vai pagar de juros ao longo do contrato e como o saldo devedor cai ano a ano.</p>
+    <h3>A fórmula</h3>
+    <div class="formula">Financiamento = valor do imóvel − entrada<br>i = taxa anual ÷ 12, n = anos × 12<br>Parcela = Financiamento · [i(1 + i)<sup>n</sup>] ÷ [(1 + i)<sup>n</sup> − 1] (Tabela Price)<br>Prestação total = parcela + IPTU anual ÷ 12 + seguro mensal</div>
+    <h3>Exemplo prático passo a passo</h3>
+    <div class="ex"><p>Um imóvel custa <b>R$ 300.000,00</b>. Você dá <b>20% de entrada</b> e financia em <b>30 anos</b> a <b>6,5% ao ano</b>. O IPTU é <b>R$ 3.600,00 por ano</b> e o seguro <b>R$ 100,00 por mês</b>.</p>
+<ol><li>Entrada: 20% × R$ 300.000,00 = R$ 60.000,00, então o financiamento é de <b>R$ 240.000,00</b></li><li>Taxa mensal i = 6,5% ÷ 12 = 0,5417%, n = 360 parcelas</li><li>Amortização + juros: R$ 240.000,00 × [i(1 + i)<sup>360</sup>] ÷ [(1 + i)<sup>360</sup> − 1] = <b>R$ 1.516,96</b></li><li>Somando IPTU R$ 3.600,00 ÷ 12 = R$ 300,00 e seguro R$ 100,00: prestação total <b>R$ 1.916,96</b></li><li>Juros em 30 anos: R$ 1.516,96 × 360 − R$ 240.000,00 = <b>R$ 306.106,77</b></li></ol></div>
+    <div class="faq">
+    <h3 style="font-size:.98rem;margin-top:18px">Perguntas frequentes</h3>
+    <h3>Quanto devo dar de entrada?</h3><p>Os bancos costumam financiar até 80% do imóvel, então a entrada mínima costuma ser de 20%. Quanto maior a entrada, menores a parcela e os juros totais.</p><h3>É possível usar o FGTS?</h3><p>Sim, em imóveis residenciais dentro das regras do Sistema Financeiro de Habitação o FGTS pode compor a entrada ou amortizar o saldo. Basta incluir esse valor na entrada.</p><h3>A calculadora usa Price ou SAC?</h3><p>Usa a Tabela Price (parcelas fixas). No SAC, muito comum no Brasil, as parcelas começam mais altas e caem; use a calculadora de empréstimo para comparar os dois sistemas.</p><h3>Por que o saldo cai devagar no começo?</h3><p>Porque as primeiras parcelas são formadas principalmente por juros, calculados sobre um saldo alto. Com o tempo, a amortização ganha peso.</p>
+    </div>
+  </div>
+
+  <div class="ad" data-slot="bottom" aria-label="Publicidade"><!-- AdSense: bottom slot --></div>
+
+  <p class="note">Esta ferramenta é apenas ilustrativa e não constitui aconselhamento financeiro, tributário ou jurídico.</p>
+  <footer><span>Calculadoras online grátis · Sem cadastro · Funcionam em qualquer dispositivo</span><a href="/pt/">Todas as calculadoras</a></footer>
+</div>
+
+<script>
+(function(){
+var LOC="pt-BR",LANG="pt",CUR="R$",CURPOST=false,CURSP=true,DEC=",",GRP=".",PCTSP="";
+var $=function(id){return document.getElementById(id);};
+var SH=[" mil"," mi"," bi"];
+function fmt(v,d){if(d==null)d=2;if(!isFinite(v))return "—";var neg=v<0&&Math.abs(v)>=0.5*Math.pow(10,-d);var p=Math.abs(v).toFixed(d).split(".");p[0]=p[0].replace(/\B(?=(\d{3})+(?!\d))/g,GRP);return (neg?"−":"")+p[0]+(p[1]?DEC+p[1]:"");}
+function money(v,d){if(!isFinite(v))return "—";var s=fmt(Math.abs(v),d==null?2:d),neg=v<0&&Math.abs(v)>=0.005?"−":"";return neg+(CURPOST?s+" "+CUR:CUR+(CURSP?" ":"")+s);}
+function pct(v,d){return isFinite(v)?fmt(v,d==null?2:d)+PCTSP+"%":"—";}
+function sig(v,n){n=n||10;if(!isFinite(v))return "—";if(v===0)return "0";var a=Math.abs(v);if(a>=1e15||a<1e-7){var e=v.toExponential(n-1).replace(/\.?0+e/,"e");return e.replace(".",DEC);}var d=Math.max(0,Math.min(12,n-1-Math.floor(Math.log10(a))));var s=fmt(v,d);if(d>0){s=s.replace(new RegExp("\\"+DEC+"?0+$"),"");}return s;}
+function short(v,isMoney){var a=Math.abs(v),s,dd=function(x){return Math.abs(x-Math.round(x))<1e-9?0:(Math.abs(x*10-Math.round(x*10))<1e-9?1:2);};if(a>=1e9)s=fmt(v/1e9,dd(v/1e9))+SH[2];else if(a>=1e6)s=fmt(v/1e6,dd(v/1e6))+SH[1];else if(a>=1e4)s=fmt(v/1e3,dd(v/1e3))+SH[0];else s=fmt(v,a<10&&a%1?1:0);if(isMoney===false)return s;return CURPOST?s+" "+CUR:CUR+(CURSP?" ":"")+s;}
+function val(id,min,max){var el=$(id);var v=parseFloat(el?el.value:NaN);if(isNaN(v))v=(min!=null?min:0);if(min!=null&&v<min)v=min;if(max!=null&&v>max)v=max;return v;}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function stats(list){return list.map(function(s,i){return '<div class="stat'+(s.main?' main':'')+'"><span>'+s.l+'</span><b>'+s.v+'</b>'+(s.e?'<em>'+s.e+'</em>':'')+'</div>';}).join("");}
+function table(head,rows,hl){return '<thead><tr>'+head.map(function(h){return '<th>'+h+'</th>';}).join('')+'</tr></thead><tbody>'+rows.map(function(r,i){return '<tr'+(hl&&hl(i,r)?' class="hl"':'')+'>'+r.map(function(c){return '<td>'+c+'</td>';}).join('')+'</tr>';}).join('')+'</tbody>';}
+function legend(items){return items.map(function(it){return '<span><i style="background:'+it[1]+(it[2]?';opacity:'+it[2]:'')+'"></i>'+it[0]+'</span>';}).join('');}
+function nice(vMax,n){n=n||4;if(!(vMax>0))vMax=1;var mag=Math.pow(10,Math.floor(Math.log10(vMax))),ns=[1,2,2.5,5,10],step=mag;for(var i=0;i<ns.length;i++){step=ns[i]*mag/n;if(step*n>=vMax)break;}return {step:step,top:step*n,n:n};}
+function txt(x,y,s,o){o=o||{};return '<text x="'+(+x).toFixed(1)+'" y="'+(+y).toFixed(1)+'" text-anchor="'+(o.a||"middle")+'" font-size="'+(o.s||11)+'" fill="'+(o.c||"var(--muted)")+'"'+(o.w?' font-weight="'+o.w+'"':'')+'>'+s+'</text>';}
+function rect(x,y,w,h,c,o){return '<rect x="'+(+x).toFixed(1)+'" y="'+(+y).toFixed(1)+'" width="'+Math.max(0,w).toFixed(1)+'" height="'+Math.max(0,h).toFixed(1)+'" fill="'+c+'"'+(o&&o.r!=null?' rx="'+o.r+'"':' rx="3"')+(o&&o.op?' opacity="'+o.op+'"':'')+'/>';}
+function gridY(W,L,R,T,ph,sc,isMoney){var s='';for(var j=0;j<=sc.n;j++){var yv=sc.step*j,y=T+ph-ph*yv/sc.top;s+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+y.toFixed(1)+'" y2="'+y.toFixed(1)+'" stroke="var(--line)"/>'+txt(L-8,y+4,short(yv,isMoney),{a:"end"});}return s;}
+/* grouped vertical bars: cats[], series[{n,c,v[]}] */
+function svgBars(id,cats,series,o){o=o||{};var W=640,H=300,L=70,R=14,T=16,B=34,pw=W-L-R,ph=H-T-B,vMax=0;series.forEach(function(s){s.v.forEach(function(v){vMax=Math.max(vMax,v);});});var sc=nice(vMax),s=gridY(W,L,R,T,ph,sc,o.money!==false);var gw=pw/cats.length,bw=Math.min(56,gw*0.8/series.length);cats.forEach(function(c,i){var x0=L+gw*i+(gw-bw*series.length)/2;series.forEach(function(se,k){var v=Math.max(0,se.v[i]),h=ph*v/sc.top,x=x0+bw*k;s+=rect(x+2,T+ph-h,bw-4,h,se.c);if(o.labels!==false)s+=txt(x+bw/2,T+ph-h-4,o.fmt?o.fmt(se.v[i]):short(se.v[i],o.money!==false),{s:10,c:"var(--text)"});});s+=txt(L+gw*i+gw/2,H-12,c,{s:12});});$(id).innerHTML=s;}
+/* stacked vertical bars: cats[], series[{n,c,v[]}] */
+function svgStack(id,cats,series,o){o=o||{};var W=640,H=300,L=70,R=14,T=12,B=30,pw=W-L-R,ph=H-T-B,vMax=0;cats.forEach(function(_,i){var t=0;series.forEach(function(s){t+=Math.max(0,s.v[i]);});vMax=Math.max(vMax,t);});var sc=nice(vMax),s=gridY(W,L,R,T,ph,sc,o.money!==false);var gw=pw/cats.length,bw=Math.max(2,Math.min(40,gw*0.72)),every=Math.ceil(cats.length/12);cats.forEach(function(c,i){var x=L+gw*i+(gw-bw)/2,y=T+ph;series.forEach(function(se){var h=ph*Math.max(0,se.v[i])/sc.top;y-=h;s+=rect(x,y,bw,h,se.c,{r:cats.length>30?0:2});});if(i%every===0||i===cats.length-1)s+=txt(x+bw/2,H-10,c);});$(id).innerHTML=s;}
+/* donut: parts[{n,c,v}] center label */
+function svgDonut(id,parts,center,sub,o){o=o||{};var el0=$(id),nar=el0.parentNode.clientWidth>0&&el0.parentNode.clientWidth<520,W=nar?360:640,H=nar?300+parts.length*46:300,cx=nar?180:(o.cx||170),cy=nar?140:150,r=110,rw=34,tot=0,s='';el0.setAttribute('viewBox','0 0 '+W+' '+H);parts.forEach(function(p){tot+=Math.max(0,p.v);});if(tot<=0){$(id).innerHTML='';return;}var a0=-Math.PI/2;parts.forEach(function(p){var f=Math.max(0,p.v)/tot;if(f<=0)return;if(f>=0.9999){s+='<circle cx="'+cx+'" cy="'+cy+'" r="'+(r-rw/2)+'" fill="none" stroke="'+p.c+'" stroke-width="'+rw+'"/>';a0+=2*Math.PI;return;}var a1=a0+f*2*Math.PI,rr=r-rw/2,lg=f>0.5?1:0;s+='<path d="M'+(cx+rr*Math.cos(a0)).toFixed(2)+' '+(cy+rr*Math.sin(a0)).toFixed(2)+' A'+rr+' '+rr+' 0 '+lg+' 1 '+(cx+rr*Math.cos(a1)).toFixed(2)+' '+(cy+rr*Math.sin(a1)).toFixed(2)+'" fill="none" stroke="'+p.c+'" stroke-width="'+rw+'"/>';a0=a1;});s+=txt(cx,cy+2,center,{s:20,c:"var(--text)",w:700})+txt(cx,cy+22,sub||'',{s:11});var lx=nar?70:330,ly=nar?300:150-parts.length*42/2+18,fs=nar?17:13;parts.forEach(function(p,i){var y=ly+i*(nar?46:42);s+=rect(lx,y-12,16,16,p.c)+txt(lx+24,y+2,p.n,{a:"start",s:fs,c:"var(--text)"})+txt(lx+24,y+(nar?22:17),(o.fmt?o.fmt(p.v):money(p.v))+' · '+pct(p.v/tot*100,1),{a:"start",s:nar?14:11});});$(id).innerHTML=s;}
+/* lines: x numeric; series[{n,c,pts:[[x,y]],w,d,area}] */
+function svgLines(id,series,o){o=o||{};var W=640,H=300,L=72,R=16,T=14,B=32,pw=W-L-R,ph=H-T-B,xMin=o.xMin!=null?o.xMin:Infinity,xMax=-Infinity,vMax=o.yMax||0;series.forEach(function(s){s.pts.forEach(function(p){if(o.xMin==null)xMin=Math.min(xMin,p[0]);xMax=Math.max(xMax,p[0]);vMax=Math.max(vMax,p[1]);});});if(xMax<=xMin)xMax=xMin+1;var sc=nice(vMax),X=function(x){return L+pw*(x-xMin)/(xMax-xMin);},Y=function(v){return T+ph-ph*Math.max(0,v)/sc.top;};var s=gridY(W,L,R,T,ph,sc,o.money!==false);if(o.pre)s+=o.pre(X,Y,sc);var span=xMax-xMin,mg=Math.pow(10,Math.floor(Math.log10(span))),ts=mg;[1,2,2.5,5,10].some(function(f){ts=f*mg/(span/mg<2?10:1);return span/ts<=6.01;});if(span/ts>6.01)ts=mg*10;for(var xv=Math.ceil(xMin/ts-1e-9)*ts;xv<=xMax+1e-9;xv+=ts){s+=txt(X(xv),H-10,o.xfmt?o.xfmt(xv):fmt(xv,ts%1?1:0));}series.forEach(function(se){var d=se.pts.map(function(p,i){return (i?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1);}).join(' ');if(se.area)s+='<path d="'+d+' L'+X(se.pts[se.pts.length-1][0]).toFixed(1)+' '+Y(0)+' L'+X(se.pts[0][0]).toFixed(1)+' '+Y(0)+' Z" fill="'+se.c+'" opacity="'+(se.area===true?.15:se.area)+'"/>';s+='<path d="'+d+'" fill="none" stroke="'+se.c+'" stroke-width="'+(se.w||3)+'"'+(se.d?' stroke-dasharray="'+se.d+'"':'')+' stroke-linejoin="round"/>';});if(o.post)s+=o.post(X,Y,sc);$(id).innerHTML=s;}
+/* horizontal bars: rows[{n,v,c,label}] */
+function svgHBars(id,rows,o){o=o||{};var W=640,rh=o.rh||46,T=8,H=T*2+rows.length*rh,L=o.L||150,R=o.R||130,pw=W-L-R,vMax=o.max||0;rows.forEach(function(r){vMax=Math.max(vMax,r.v);});if(vMax<=0)vMax=1;var s='';rows.forEach(function(r,i){var y=T+i*rh,w=pw*Math.max(0,r.v)/vMax;s+=txt(L-10,y+rh/2+4,r.n,{a:"end",s:12,c:"var(--text)"})+rect(L,y+8,pw,rh-16,"var(--line)",{op:.5})+rect(L,y+8,w,rh-16,r.c)+txt(L+w+8,y+rh/2+4,r.label!=null?r.label:money(r.v),{a:"start",s:12,c:"var(--text)",w:600});});var el=$(id);el.setAttribute("viewBox","0 0 "+W+" "+H);el.innerHTML=s;}
+function copyText(t,btn){var done=function(){if(!btn)return;var o=btn.getAttribute("data-label")||btn.textContent;btn.setAttribute("data-label",o);btn.textContent=T.copied;setTimeout(function(){btn.textContent=o;},1500);};if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(done,function(){fb();});}else fb();function fb(){var a=document.createElement("textarea");a.value=t;a.setAttribute("readonly","");a.style.position="fixed";a.style.opacity="0";document.body.appendChild(a);a.select();try{document.execCommand("copy");}catch(e){}document.body.removeChild(a);done();}}
+function syncSeg(){document.querySelectorAll("[data-for]").forEach(function(g){var inp=$(g.getAttribute("data-for"));g.querySelectorAll("button[data-v]").forEach(function(b){var a=inp.value,v=b.getAttribute("data-v");b.setAttribute("aria-pressed",String(a===v||(a!==""&&!isNaN(a)&&!isNaN(v)&&parseFloat(a)===parseFloat(v))));});});}
+function init(o){var inputs=[].slice.call(document.querySelectorAll(".wrap input,.wrap select"));var defs=inputs.map(function(el){return el.type==="checkbox"?el.checked:el.value;});var run=function(){if($("cur")){CUR=$("cur").value;CURPOST=CUR==="€";}syncSeg();o.render();};inputs.forEach(function(el){el.addEventListener("input",run);el.addEventListener("change",run);});document.querySelectorAll("[data-for]").forEach(function(g){g.addEventListener("click",function(e){var b=e.target.closest("button[data-v]");if(!b)return;$(g.getAttribute("data-for")).value=b.getAttribute("data-v");if(o.onPick)o.onPick(g.getAttribute("data-for"));run();});});var rs=$("reset");if(rs)rs.addEventListener("click",function(){inputs.forEach(function(el,i){if(el.type==="checkbox")el.checked=defs[i];else el.value=defs[i];});if(o.afterReset)o.afterReset();run();});var cp=$("copy");if(cp)cp.addEventListener("click",function(){copyText(o.copy(),cp);});document.addEventListener("click",function(e){var b=e.target.closest(".cp");if(b)copyText(b.getAttribute("data-text"),b);});var rt;window.addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(o.render,150);});run();}
+
+var T={"tot": "Prestação mensal total", "loan": "Valor financiado", "ti": "Total de juros", "tc": "Custo total do imóvel", "pi": "Amortização + juros", "cap": "Amortização", "intr": "Juros", "tax": "IPTU", "ins": "Seguro", "y": "Ano", "pp": "Amortização paga", "ip": "Juros pagos", "bal": "Saldo devedor", "per": "por mês", "down": "Entrada", "bad": "A entrada é maior que o valor do imóvel.", "cp": "Financiamento", "copied": "Copiado!", "copy1": "Copiar"};
+
+function calc(){var V=val("V",0),d=val("D",0),D=$("Du").value==="pct"?V*Math.min(d,100)/100:Math.min(d,V),Pl=V-D,Y=+$("Y").value||30,n=Y*12,i=val("r",0,50)/100/12,tx=val("tx",0),ins=val("ins",0);
+var C=Pl<=0?0:(i>0?Pl*i*Math.pow(1+i,n)/(Math.pow(1+i,n)-1):Pl/n),b=Pl,rows=[],TI=0,yp=0,yi=0,fi=Pl*i;
+for(var k=1;k<=n;k++){var it=b*i,am=Math.min(b,C-it);b-=am;TI+=it;yp+=am;yi+=it;if(k%12===0){rows.push([k/12,yp,yi,Math.max(0,b)]);yp=0;yi=0;}}
+return {V:V,D:D,Pl:Pl,Y:Y,n:n,C:C,tx:tx,ins:ins,TI:TI,tot:C+tx/12+ins,fi:fi,rows:rows,over:d>0&&$("Du").value==="amt"&&d>V};}
+function render(){var c=calc();$("msg").textContent=c.over?T.bad:"";
+$("results").innerHTML=stats([{l:T.tot,v:money(c.tot),main:1,e:T.pi+": "+money(c.C)+" · "+T.tax+": "+money(c.tx/12)+" · "+T.ins+": "+money(c.ins)},{l:T.loan,v:money(c.Pl),e:T.down+": "+money(c.D)},{l:T.ti,v:money(c.TI)},{l:T.tc,v:money(c.D+c.C*c.n+c.tx*c.Y+c.ins*c.n)}]);
+$("legend").innerHTML="";
+svgDonut("chart",[{n:T.cap,c:"var(--accent)",v:Math.max(0,c.C-c.fi)},{n:T.intr,c:"var(--accent2)",v:Math.min(c.fi,c.C)},{n:T.tax,c:"var(--c3)",v:c.tx/12},{n:T.ins,c:"var(--c4)",v:c.ins}],money(c.tot,0),T.per);
+$("table").innerHTML=table([T.y,T.pp,T.ip,T.bal],c.rows.map(function(r){return [r[0],money(r[1]),money(r[2]),money(r[3])];}));}
+function copy(){var c=calc();return T.cp+": "+money(c.V)+" − "+money(c.D)+" = "+money(c.Pl)+" · "+c.Y+" · "+pct(val("r",0)||0,2)+"\n"+T.tot+": "+money(c.tot)+"\n"+T.ti+": "+money(c.TI);}
+init({render:render,copy:copy});
+
+})();
+</script>
+</body>
+</html>
