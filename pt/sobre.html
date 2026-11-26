@@ -86,7 +86,7 @@ input:focus,select:focus,button:focus-visible{outline:2px solid var(--accent);ou
 .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
 svg{width:100%;height:auto;display:block}
 .tbl{overflow-x:auto;-webkit-overflow-scrolling:touch}
-table{border-collapse:collapse;width:100%;min-width:440px;font-size:.88rem;font-variant-numeric:tabular-nums}
+table{border-collapse:collapse;width:100%;min-width:0;font-size:.88rem;font-variant-numeric:tabular-nums}
 th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
 th:first-child,td:first-child{text-align:left}
 th{color:var(--muted);font-weight:600;font-size:.78rem;position:sticky;top:0;background:var(--card)}
@@ -122,6 +122,8 @@ footer a{color:var(--muted)}
 .legal a{color:var(--accent);overflow-wrap:anywhere}
 .disc{flex-basis:100%;margin:0 0 4px;font-size:.78rem}footer nav{display:flex;gap:6px 14px;flex-wrap:wrap}
 .uy{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}svg.uyf{width:18px;height:12px;border-radius:2px;box-shadow:0 0 0 1px var(--line);flex:none}
+h1,h2{overflow-wrap:break-word;hyphens:auto}
+@media(max-width:480px){th,td{padding:9px 6px!important;font-size:.82rem!important}th:first-child,td:first-child{padding-left:2px!important}}
 </style>
 </head>
 <body>
@@ -141,7 +143,6 @@ footer a{color:var(--muted)}
 
 <h2>O que é o CalcFinanzasPro</h2>
 <p>O CalcFinanzasPro é uma coleção gratuita de calculadoras online para finanças pessoais, empréstimos, investimentos, preços de negócios e dúvidas do dia a dia. Cada ferramenta está disponível em português, inglês, espanhol e alemão, para você usar no idioma de sua preferência.</p>
-<p>O CalcFinanzasPro é feito com orgulho no Uruguai e pensado para ser útil a pessoas de qualquer lugar.</p>
 <h2>Nossa abordagem</h2>
 <ul><li><b>Resultados claros.</b> Cada calculadora explica seu resultado, mostra um gráfico e uma tabela quando ajudam e detalha a fórmula por trás dos números.</li>
 <li><b>Exemplos resolvidos.</b> Cada página traz um exemplo passo a passo para você conferir a lógica por conta própria.</li>
@@ -155,7 +156,7 @@ footer a{color:var(--muted)}
 <p>O site é gratuito. Podemos exibir publicidade, como o Google AdSense, para cobrir os custos de funcionamento. Os anúncios ficam separados dos resultados e nunca alteram a forma como um resultado é calculado.</p>
 
   </div>
-  <footer><p class="disc">Apenas para fins informativos e educacionais. Os resultados são estimativas e não constituem aconselhamento financeiro, fiscal ou jurídico.</p><span></span><span class="uy"><svg class="uyf" width="18" height="12" viewBox="0 0 18 12" aria-hidden="true" focusable="false"><rect width="18" height="12" fill="#fff"/><path d="M0 1.33h18M0 4h18M0 6.67h18M0 9.33h18M0 12h18" stroke="#0038a8" stroke-width="1.33" transform="translate(0,-.67)"/><rect width="7.4" height="6.67" fill="#fff"/><circle cx="3.7" cy="3.33" r="2" fill="#fcd116"/></svg>Feito no Uruguai</span><nav aria-label="Footer"><a href="/pt/">Todas as calculadoras</a><a href="/pt/sobre.html">Sobre</a><a href="/pt/contato.html">Contato</a><a href="/pt/politica-de-privacidade.html">Política de privacidade</a><a href="/pt/termos-de-uso.html">Termos de uso</a></nav></footer>
+  <footer><p class="disc">Apenas para fins informativos e educacionais. Os resultados são estimativas e não constituem aconselhamento financeiro, fiscal ou jurídico.</p><span></span><nav aria-label="Footer"><a href="/pt/">Todas as calculadoras</a><a href="/pt/sobre.html">Sobre</a><a href="/pt/contato.html">Contato</a><a href="/pt/politica-de-privacidade.html">Política de privacidade</a><a href="/pt/termos-de-uso.html">Termos de uso</a></nav></footer>
 </div>
 </body>
 </html>

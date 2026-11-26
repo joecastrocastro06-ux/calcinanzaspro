@@ -143,7 +143,7 @@ input:focus,select:focus,button:focus-visible{outline:2px solid var(--accent);ou
 .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
 svg{width:100%;height:auto;display:block}
 .tbl{overflow-x:auto;-webkit-overflow-scrolling:touch}
-table{border-collapse:collapse;width:100%;min-width:440px;font-size:.88rem;font-variant-numeric:tabular-nums}
+table{border-collapse:collapse;width:100%;min-width:0;font-size:.88rem;font-variant-numeric:tabular-nums}
 th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
 th:first-child,td:first-child{text-align:left}
 th{color:var(--muted);font-weight:600;font-size:.78rem;position:sticky;top:0;background:var(--card)}
@@ -175,6 +175,28 @@ footer a{color:var(--muted)}
 @media (max-width:560px){.grid{grid-template-columns:1fr}.results{grid-template-columns:1fr}.stat.main b{font-size:1.55rem}.seg button{font-size:.85rem}}
 .disc{flex-basis:100%;margin:0 0 4px;font-size:.78rem}footer nav{display:flex;gap:6px 14px;flex-wrap:wrap}
 .uy{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}svg.uyf{width:18px;height:12px;border-radius:2px;box-shadow:0 0 0 1px var(--line);flex:none}
+.how details{border:1px solid var(--line);border-radius:12px;margin:0 0 10px;background:var(--bg)}
+.how summary{cursor:pointer;list-style:none;padding:13px 14px;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:46px;border-radius:12px}
+.how summary::-webkit-details-marker{display:none}
+.how summary::after{content:'+';font-size:1.4rem;line-height:1;color:var(--accent);flex:none}
+.how details[open]>summary::after{content:'\2212'}
+.how summary:hover{background:var(--soft)}
+.how summary:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.how details>.dc{padding:2px 14px 14px}
+.how details>.dc>*:last-child{margin-bottom:0}
+.how details .ex{border:0;padding:0;margin:0 0 12px;background:transparent}
+.how .faq{margin-top:18px}
+.how .faq .fh{font-size:.98rem;margin:0 0 10px}
+.how details.q summary{font-weight:600;font-size:.95rem}
+.how details.q>.dc p{margin:0;color:var(--text)}
+.rel{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.rel a{display:block;border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--text);background:var(--bg)}.rel a:hover{border-color:var(--accent)}.rel b{display:block;font-size:.95rem;margin-bottom:3px}.rel span{display:block;font-size:.8rem;color:var(--muted)}
+.actions .btn{flex:1 1 auto}
+h1,h2{overflow-wrap:break-word;hyphens:auto}
+#peek{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:20;display:none;align-items:center;justify-content:space-between;gap:12px;background:var(--accent);color:var(--bg);border:0;border-radius:14px;padding:11px 16px;font:inherit;text-align:left;box-shadow:0 6px 20px rgba(0,0,0,.28);cursor:pointer;min-height:48px}
+#peek span{font-size:.78rem;opacity:.92;display:block}#peek b{font-size:1.05rem;display:block}#peek i{font-style:normal;font-size:1.3rem;flex:none}
+@media (min-width:761px){#peek{display:none!important}}
+.chips button{min-height:40px}.btn{min-height:44px}.seg button{min-height:44px}
+@media(max-width:480px){th,td{padding:9px 6px!important;font-size:.82rem!important}th:first-child,td:first-child{padding-left:2px!important}}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1378483731222053"
      crossorigin="anonymous"></script>
@@ -225,26 +247,18 @@ footer a{color:var(--muted)}
 
   <div class="ad" data-slot="middle" aria-label="Advertisement"><!-- AdSense: in-content slot --></div>
 
-  <div class="card how" id="how">
-    <h2>Como funciona</h2>
-    <h3>O que esta calculadora faz</h3>
-    <p>Esta calculadora compara o patrimônio de longo prazo que você teria se comprasse um imóvel com o que teria se alugasse e investisse. Os dois caminhos usam o mesmo orçamento mensal: a opção com a menor despesa de moradia investe a diferença, para a comparação ser justa. Ao comprar, ela acompanha o saldo devedor, a valorização do imóvel, os custos de proprietário (IPTU, seguro, manutenção) e o custo de vender. Ao alugar, acompanha sua entrada e suas economias mensais crescendo ao rendimento dos seus investimentos, enquanto o aluguel sobe a cada ano.</p>
-<p>O resultado é o patrimônio de cada caminho após os anos que você escolher, além do ponto de equilíbrio, o momento em que comprar supera alugar. É uma comparação puramente financeira: não dá preço à estabilidade, à liberdade de se mudar nem à satisfação de ter a casa própria.</p>
-    <h3>A fórmula</h3>
-    <div class="formula">Parcela = Financiado × i ÷ [1 − (1 + i)<sup>−n</sup>] (i = taxa ÷ 12, n = meses)<br>Patrimônio ao comprar = valor do imóvel × (1 − custos de venda) − saldo devedor + economias investidas<br>Patrimônio ao alugar = entrada + economias mensais, investidas ao rendimento escolhido<br>Todo mês, a opção mais barata investe a diferença para a mais cara</div>
-    <h3>Exemplo prático passo a passo</h3>
-    <div class="ex"><p>Você está decidindo entre comprar um imóvel de <b>R$ 300.000,00</b> com <b>20%</b> de entrada a <b>6,5%</b> em 30 anos, ou alugar por <b>R$ 1.500,00</b> por mês e investir a diferença. O valor do imóvel e o aluguel sobem 3% ao ano, os custos de ser proprietário são 2% do valor por ano, os custos de venda 6% e os investimentos rendem 6%. Você compara em 10 anos.</p>
-<ol><li>Entrada = R$ 60.000,00; financiamento = R$ 240.000,00. A parcela mensal do financiamento é <b>R$ 1.516,96</b>.</li><li>O mês 1 como proprietário custa R$ 1.516,96 + 2% × R$ 300.000,00 ÷ 12 = R$ 500,00, ou seja, <b>R$ 2.016,96</b> por mês contra um aluguel de <b>R$ 1.500,00</b>. Quem aluga investe a entrada de R$ 60.000,00 mais a diferença mensal de R$ 516,96.</li><li>Em 10 anos o imóvel vale R$ 403.175 e você ainda deve R$ 203.463. Os custos de venda de 6% são descontados.</li><li>Patrimônio se você comprar: <b>R$ 175.522</b>. Patrimônio se você alugar e investir: <b>R$ 173.860</b>.</li><li>Comprar fica à frente por <b>R$ 1.662</b> e supera o aluguel depois de cerca de <b>9 anos 6 meses</b>.</li></ol></div>
-    <div class="faq">
-    <h3 style="font-size:.98rem;margin-top:18px">Perguntas frequentes</h3>
-    <h3>Comprar sempre compensa?</h3><p>Não. Depende da relação entre preço e aluguel, de quanto tempo você fica, da taxa do financiamento e do que poderia render investindo. Em prazos curtos, os custos de comprar e vender costumam superar os ganhos.</p><h3>O que os “custos de proprietário” incluem?</h3><p>IPTU, seguro da moradia e manutenção ou reparos, que juntos costumam ficar entre 1% e 3% do valor do imóvel por ano. Some o condomínio se você paga.</p><h3>Por que quem aluga investe a entrada?</h3><p>Porque esse dinheiro não fica preso no imóvel. Colocar o mesmo dinheiro para trabalhar em outro lugar é o que torna as duas opções comparáveis.</p><h3>O que não está incluído?</h3><p>Impostos sobre ganhos de investimentos, deduções de juros do financiamento, custos de mudança, caução do aluguel e mudanças na sua renda. Use o resultado como guia e consulte um profissional sobre o seu caso.</p>
-    </div>
+  <div class="card how" id="how"><h2>Como funciona</h2><details><summary>O que esta calculadora faz</summary><div class="dc"><p>Esta calculadora compara o patrimônio de longo prazo que você teria se comprasse um imóvel com o que teria se alugasse e investisse. Os dois caminhos usam o mesmo orçamento mensal: a opção com a menor despesa de moradia investe a diferença, para a comparação ser justa. Ao comprar, ela acompanha o saldo devedor, a valorização do imóvel, os custos de proprietário (IPTU, seguro, manutenção) e o custo de vender. Ao alugar, acompanha sua entrada e suas economias mensais crescendo ao rendimento dos seus investimentos, enquanto o aluguel sobe a cada ano.</p><p>O resultado é o patrimônio de cada caminho após os anos que você escolher, além do ponto de equilíbrio, o momento em que comprar supera alugar. É uma comparação puramente financeira: não dá preço à estabilidade, à liberdade de se mudar nem à satisfação de ter a casa própria.</p></div></details><details><summary>A fórmula</summary><div class="dc"><div class="formula">Parcela = Financiado × i ÷ [1 − (1 + i)<sup>−n</sup>] (i = taxa ÷ 12, n = meses)<br/>Patrimônio ao comprar = valor do imóvel × (1 − custos de venda) − saldo devedor + economias investidas<br/>Patrimônio ao alugar = entrada + economias mensais, investidas ao rendimento escolhido<br/>Todo mês, a opção mais barata investe a diferença para a mais cara</div></div></details><details><summary>Exemplo prático passo a passo</summary><div class="dc"><div class="ex"><p>Você está decidindo entre comprar um imóvel de <b>R$ 300.000,00</b> com <b>20%</b> de entrada a <b>6,5%</b> em 30 anos, ou alugar por <b>R$ 1.500,00</b> por mês e investir a diferença. O valor do imóvel e o aluguel sobem 3% ao ano, os custos de ser proprietário são 2% do valor por ano, os custos de venda 6% e os investimentos rendem 6%. Você compara em 10 anos.</p>
+<ol><li>Entrada = R$ 60.000,00; financiamento = R$ 240.000,00. A parcela mensal do financiamento é <b>R$ 1.516,96</b>.</li><li>O mês 1 como proprietário custa R$ 1.516,96 + 2% × R$ 300.000,00 ÷ 12 = R$ 500,00, ou seja, <b>R$ 2.016,96</b> por mês contra um aluguel de <b>R$ 1.500,00</b>. Quem aluga investe a entrada de R$ 60.000,00 mais a diferença mensal de R$ 516,96.</li><li>Em 10 anos o imóvel vale R$ 403.175 e você ainda deve R$ 203.463. Os custos de venda de 6% são descontados.</li><li>Patrimônio se você comprar: <b>R$ 175.522</b>. Patrimônio se você alugar e investir: <b>R$ 173.860</b>.</li><li>Comprar fica à frente por <b>R$ 1.662</b> e supera o aluguel depois de cerca de <b>9 anos 6 meses</b>.</li></ol></div></div></details><div class="faq"><h3 class="fh">Perguntas frequentes</h3><details class="q"><summary>Comprar sempre compensa?</summary><div class="dc"><p>Não. Depende da relação entre preço e aluguel, de quanto tempo você fica, da taxa do financiamento e do que poderia render investindo. Em prazos curtos, os custos de comprar e vender costumam superar os ganhos.</p></div></details><details class="q"><summary>O que os “custos de proprietário” incluem?</summary><div class="dc"><p>IPTU, seguro da moradia e manutenção ou reparos, que juntos costumam ficar entre 1% e 3% do valor do imóvel por ano. Some o condomínio se você paga.</p></div></details><details class="q"><summary>Por que quem aluga investe a entrada?</summary><div class="dc"><p>Porque esse dinheiro não fica preso no imóvel. Colocar o mesmo dinheiro para trabalhar em outro lugar é o que torna as duas opções comparáveis.</p></div></details><details class="q"><summary>O que não está incluído?</summary><div class="dc"><p>Impostos sobre ganhos de investimentos, deduções de juros do financiamento, custos de mudança, caução do aluguel e mudanças na sua renda. Use o resultado como guia e consulte um profissional sobre o seu caso.</p></div></details></div></div>
+  <div class="card related">
+    <h2>Calculadoras relacionadas</h2>
+    <div class="rel"><a href="/pt/calculadora-financiamento-imobiliario.html"><b>Calculadora de financiamento imobiliário</b><span>Estime a prestação completa, com IPTU e seguro incluídos.</span></a><a href="/pt/calculadora-juros-compostos.html"><b>Calculadora de juros compostos</b><span>Veja quanto seu dinheiro cresce quando os juros passam a render juros.</span></a><a href="/pt/calculadora-meta-economia.html"><b>Calculadora de meta de economia</b><span>Transforme uma meta grande em um valor mensal possível.</span></a></div>
   </div>
+
 
   <div class="ad" data-slot="bottom" aria-label="Advertisement"><!-- AdSense: bottom slot --></div>
 
   <p class="note">Esta ferramenta é apenas ilustrativa e não constitui aconselhamento financeiro, tributário ou jurídico.</p>
-  <footer><span>Calculadoras online grátis · Sem cadastro · Funcionam em qualquer dispositivo</span><span class="uy"><svg class="uyf" width="18" height="12" viewBox="0 0 18 12" aria-hidden="true" focusable="false"><rect width="18" height="12" fill="#fff"/><path d="M0 1.33h18M0 4h18M0 6.67h18M0 9.33h18M0 12h18" stroke="#0038a8" stroke-width="1.33" transform="translate(0,-.67)"/><rect width="7.4" height="6.67" fill="#fff"/><circle cx="3.7" cy="3.33" r="2" fill="#fcd116"/></svg>Feito no Uruguai</span><nav aria-label="Footer"><a href="/pt/">Todas as calculadoras</a><a href="/pt/sobre.html">Sobre</a><a href="/pt/contato.html">Contato</a><a href="/pt/politica-de-privacidade.html">Política de privacidade</a><a href="/pt/termos-de-uso.html">Termos de uso</a></nav></footer>
+  <footer><p class="disc">Apenas para fins informativos e educacionais. Os resultados são estimativas e não constituem aconselhamento financeiro, fiscal ou jurídico.</p><span>Calculadoras online grátis · Sem cadastro · Funcionam em qualquer dispositivo</span><nav aria-label="Footer"><a href="/pt/">Todas as calculadoras</a><a href="/pt/sobre.html">Sobre</a><a href="/pt/contato.html">Contato</a><a href="/pt/politica-de-privacidade.html">Política de privacidade</a><a href="/pt/termos-de-uso.html">Termos de uso</a></nav></footer>
 </div>
 
 <script>
@@ -311,5 +325,22 @@ init({render:render,copy:copy});
 
 })();
 </script>
+<script>(function(){var d=document.querySelector('#how details');document.querySelectorAll('a[href="#how"]').forEach(function(a){a.addEventListener('click',function(){if(d)d.open=true;});});if(location.hash==='#how'&&d)d.open=true;})();</script>
+<script>/*share*/(function(){var c=document.getElementById('copy');if(!c)return;var L={"s": "Compartilhar", "c": "Copiado!"},b=document.createElement('button');b.type='button';b.className='btn';b.id='share';b.textContent=L.s;c.parentNode.insertBefore(b,c.nextSibling);
+var skip=!!document.getElementById('try'),els=[].slice.call(document.querySelectorAll('.wrap input[id],.wrap select[id]')),segs=[].slice.call(document.querySelectorAll('.seg'));
+function val(e){return e.type==='checkbox'?(e.checked?'1':'0'):e.value;}
+function si(g){var bs=[].slice.call(g.querySelectorAll('button')),k=-1;bs.forEach(function(x,i){if(x.getAttribute('aria-pressed')==='true')k=i;});return k;}
+var dv=els.map(val),ds=segs.map(si);
+function mk(){var u=location.origin+location.pathname;if(skip)return u;var p=[];segs.forEach(function(g,i){var k=si(g);if(k!==ds[i])p.push('s'+i+'='+k);});els.forEach(function(e,i){var v=val(e);if(v!==dv[i])p.push(encodeURIComponent(e.id)+'='+encodeURIComponent(v));});return p.length?u+'?'+p.join('&'):u;}
+function txt(){var o=[document.querySelector('h1').textContent.trim()];[].slice.call(document.querySelectorAll('#results .stat')).slice(0,3).forEach(function(s){var l=s.querySelector('span'),v=s.querySelector('b');if(l&&v)o.push(l.textContent.trim()+': '+v.textContent.trim());});return o.join('\n');}
+b.addEventListener('click',function(){var u=mk(),t=txt();if(navigator.share){navigator.share({title:document.title,text:t,url:u}).catch(function(){});return;}var all=t+'\n'+u,done=function(){var o=b.textContent;b.textContent=L.c;setTimeout(function(){b.textContent=o;},1500);};
+if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(all).then(done,fb);}else fb();function fb(){var a=document.createElement('textarea');a.value=all;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(a);done();}});
+if(!skip&&location.search){var q=new URLSearchParams(location.search),ch=null;segs.forEach(function(g,i){var k=q.get('s'+i);if(k!==null){var bt=g.querySelectorAll('button')[+k];if(bt)bt.click();}});els.forEach(function(e){var v=q.get(e.id);if(v===null)return;if(e.type==='checkbox')e.checked=v==='1';else if(e.tagName==='SELECT'){if([].some.call(e.options,function(o){return o.value===v;}))e.value=v;else return;}else e.value=v;ch=e;});if(ch)ch.dispatchEvent(new Event('input',{bubbles:true}));}})();</script>
+<script>/*peek*/(function(){var r=document.getElementById('results');if(!r||window.innerWidth>760)return;var b=document.createElement('button');b.type='button';b.id='peek';b.setAttribute('aria-label','Results');b.innerHTML='<div><span></span><b></b></div><i aria-hidden="true">\u2193</i>';document.body.appendChild(b);
+var vis=true;function fill(){var s=r.querySelector('.stat.main')||r.querySelector('.stat');if(!s){b.style.display='none';return;}var l=s.querySelector('span'),v=s.querySelector('b');b.querySelector('span').textContent=l?l.textContent:'';b.querySelector('b').textContent=v?v.textContent:'';b.setAttribute('aria-label',(l?l.textContent:'')+': '+(v?v.textContent:''));}
+function show(){b.style.display=(!vis&&r.getBoundingClientRect().top>0&&b.querySelector('b').textContent)?'flex':'none';}
+if('IntersectionObserver' in window){new IntersectionObserver(function(e){vis=e[0].isIntersecting;show();},{threshold:0.05}).observe(r);}
+new MutationObserver(function(){fill();show();}).observe(r,{childList:true,subtree:true,characterData:true});fill();
+window.addEventListener('scroll',show,{passive:true});b.addEventListener('click',function(){r.scrollIntoView({behavior:'smooth',block:'start'});});})();</script>
 </body>
 </html>

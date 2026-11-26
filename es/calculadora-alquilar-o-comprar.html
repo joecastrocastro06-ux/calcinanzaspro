@@ -143,7 +143,7 @@ input:focus,select:focus,button:focus-visible{outline:2px solid var(--accent);ou
 .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
 svg{width:100%;height:auto;display:block}
 .tbl{overflow-x:auto;-webkit-overflow-scrolling:touch}
-table{border-collapse:collapse;width:100%;min-width:440px;font-size:.88rem;font-variant-numeric:tabular-nums}
+table{border-collapse:collapse;width:100%;min-width:0;font-size:.88rem;font-variant-numeric:tabular-nums}
 th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
 th:first-child,td:first-child{text-align:left}
 th{color:var(--muted);font-weight:600;font-size:.78rem;position:sticky;top:0;background:var(--card)}
@@ -175,6 +175,28 @@ footer a{color:var(--muted)}
 @media (max-width:560px){.grid{grid-template-columns:1fr}.results{grid-template-columns:1fr}.stat.main b{font-size:1.55rem}.seg button{font-size:.85rem}}
 .disc{flex-basis:100%;margin:0 0 4px;font-size:.78rem}footer nav{display:flex;gap:6px 14px;flex-wrap:wrap}
 .uy{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}svg.uyf{width:18px;height:12px;border-radius:2px;box-shadow:0 0 0 1px var(--line);flex:none}
+.how details{border:1px solid var(--line);border-radius:12px;margin:0 0 10px;background:var(--bg)}
+.how summary{cursor:pointer;list-style:none;padding:13px 14px;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:46px;border-radius:12px}
+.how summary::-webkit-details-marker{display:none}
+.how summary::after{content:'+';font-size:1.4rem;line-height:1;color:var(--accent);flex:none}
+.how details[open]>summary::after{content:'\2212'}
+.how summary:hover{background:var(--soft)}
+.how summary:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.how details>.dc{padding:2px 14px 14px}
+.how details>.dc>*:last-child{margin-bottom:0}
+.how details .ex{border:0;padding:0;margin:0 0 12px;background:transparent}
+.how .faq{margin-top:18px}
+.how .faq .fh{font-size:.98rem;margin:0 0 10px}
+.how details.q summary{font-weight:600;font-size:.95rem}
+.how details.q>.dc p{margin:0;color:var(--text)}
+.rel{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.rel a{display:block;border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--text);background:var(--bg)}.rel a:hover{border-color:var(--accent)}.rel b{display:block;font-size:.95rem;margin-bottom:3px}.rel span{display:block;font-size:.8rem;color:var(--muted)}
+.actions .btn{flex:1 1 auto}
+h1,h2{overflow-wrap:break-word;hyphens:auto}
+#peek{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:20;display:none;align-items:center;justify-content:space-between;gap:12px;background:var(--accent);color:var(--bg);border:0;border-radius:14px;padding:11px 16px;font:inherit;text-align:left;box-shadow:0 6px 20px rgba(0,0,0,.28);cursor:pointer;min-height:48px}
+#peek span{font-size:.78rem;opacity:.92;display:block}#peek b{font-size:1.05rem;display:block}#peek i{font-style:normal;font-size:1.3rem;flex:none}
+@media (min-width:761px){#peek{display:none!important}}
+.chips button{min-height:40px}.btn{min-height:44px}.seg button{min-height:44px}
+@media(max-width:480px){th,td{padding:9px 6px!important;font-size:.82rem!important}th:first-child,td:first-child{padding-left:2px!important}}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1378483731222053"
      crossorigin="anonymous"></script>
@@ -225,26 +247,18 @@ footer a{color:var(--muted)}
 
   <div class="ad" data-slot="middle" aria-label="Advertisement"><!-- AdSense: in-content slot --></div>
 
-  <div class="card how" id="how">
-    <h2>Cómo funciona</h2>
-    <h3>Qué calcula esta herramienta</h3>
-    <p>Esta calculadora compara el patrimonio a largo plazo que tendrías si comprás una casa con el que tendrías si alquilás e invertís. Los dos caminos usan el mismo presupuesto mensual: la opción con la cuota de vivienda más baja invierte la diferencia, así la comparación es justa. Al comprar, sigue el saldo de la hipoteca, la valorización de la casa, los costos de propietario (impuestos, seguro, mantenimiento) y el costo de vender. Al alquilar, sigue tu entrega inicial y tus ahorros mensuales creciendo al rendimiento de tus inversiones, mientras el alquiler sube cada año.</p>
-<p>El resultado es el patrimonio de cada camino después de los años que elijas, más el punto de equilibrio: el momento en que comprar supera a alquilar. Es una comparación puramente financiera: no le pone precio a la estabilidad, a la libertad de mudarte ni a la satisfacción de tener tu casa.</p>
-    <h3>La fórmula</h3>
-    <div class="formula">Cuota = Préstamo × i ÷ [1 − (1 + i)<sup>−n</sup>] (i = tasa ÷ 12, n = meses)<br>Patrimonio al comprar = valor de la casa × (1 − costos de venta) − saldo del préstamo + ahorros invertidos<br>Patrimonio al alquilar = entrega inicial + ahorros mensuales, invertidos al rendimiento elegido<br>Cada mes, la opción más barata invierte la diferencia con la más cara</div>
-    <h3>Ejemplo práctico paso a paso</h3>
-    <div class="ex"><p>Estás decidiendo entre comprar una casa de <b>$ 300.000,00</b> con <b>20 %</b> de entrega a <b>6,5 %</b> a 30 años, o alquilar por <b>$ 1.500,00</b> al mes e invertir la diferencia. El valor de la casa y el alquiler suben 3 % por año, los costos de ser propietario son 2 % del valor por año, los costos de venta 6 % y las inversiones rinden 6 %. Comparás a 10 años.</p>
-<ol><li>Entrega inicial = $ 60.000,00; préstamo = $ 240.000,00. La cuota mensual de la hipoteca es <b>$ 1.516,96</b>.</li><li>El mes 1 como propietario cuesta $ 1.516,96 + 2 % × $ 300.000,00 ÷ 12 = $ 500,00, o sea <b>$ 2.016,96</b> por mes frente a un alquiler de <b>$ 1.500,00</b>. Quien alquila invierte la entrega de $ 60.000,00 más la diferencia mensual de $ 516,96.</li><li>A los 10 años la casa vale $ 403.175 y todavía debés $ 203.463. Se descuentan los costos de venta de 6 %.</li><li>Patrimonio si comprás: <b>$ 175.522</b>. Patrimonio si alquilás e invertís: <b>$ 173.860</b>.</li><li>Comprar queda por delante por <b>$ 1.662</b> y supera al alquiler después de unos <b>9 años 6 meses</b>.</li></ol></div>
-    <div class="faq">
-    <h3 style="font-size:.98rem;margin-top:18px">Preguntas frecuentes</h3>
-    <h3>¿Siempre conviene comprar?</h3><p>No. Depende de la relación entre precio y alquiler, de cuánto tiempo te quedás, de la tasa de la hipoteca y de lo que podrías ganar invirtiendo. En plazos cortos, los costos de comprar y vender suelen superar las ganancias.</p><h3>¿Qué incluyen los “costos de propietario”?</h3><p>Impuestos a la propiedad, seguro de la vivienda y mantenimiento o reparaciones, que juntos suelen ser entre 1 % y 3 % del valor de la casa por año. Sumá los gastos comunes si los pagás.</p><h3>¿Por qué quien alquila invierte la entrega inicial?</h3><p>Porque ese dinero no queda atado a la casa. Poner la misma plata a trabajar en otro lado es lo que hace comparables las dos opciones.</p><h3>¿Qué no está incluido?</h3><p>Los impuestos sobre las ganancias de inversión, las deducciones por intereses de la hipoteca, los gastos de mudanza, los depósitos de alquiler y los cambios en tus ingresos. Usá el resultado como guía y consultá a un profesional por tu caso.</p>
-    </div>
+  <div class="card how" id="how"><h2>Cómo funciona</h2><details><summary>Qué calcula esta herramienta</summary><div class="dc"><p>Esta calculadora compara el patrimonio a largo plazo que tendrías si comprás una casa con el que tendrías si alquilás e invertís. Los dos caminos usan el mismo presupuesto mensual: la opción con la cuota de vivienda más baja invierte la diferencia, así la comparación es justa. Al comprar, sigue el saldo de la hipoteca, la valorización de la casa, los costos de propietario (impuestos, seguro, mantenimiento) y el costo de vender. Al alquilar, sigue tu entrega inicial y tus ahorros mensuales creciendo al rendimiento de tus inversiones, mientras el alquiler sube cada año.</p><p>El resultado es el patrimonio de cada camino después de los años que elijas, más el punto de equilibrio: el momento en que comprar supera a alquilar. Es una comparación puramente financiera: no le pone precio a la estabilidad, a la libertad de mudarte ni a la satisfacción de tener tu casa.</p></div></details><details><summary>La fórmula</summary><div class="dc"><div class="formula">Cuota = Préstamo × i ÷ [1 − (1 + i)<sup>−n</sup>] (i = tasa ÷ 12, n = meses)<br/>Patrimonio al comprar = valor de la casa × (1 − costos de venta) − saldo del préstamo + ahorros invertidos<br/>Patrimonio al alquilar = entrega inicial + ahorros mensuales, invertidos al rendimiento elegido<br/>Cada mes, la opción más barata invierte la diferencia con la más cara</div></div></details><details><summary>Ejemplo práctico paso a paso</summary><div class="dc"><div class="ex"><p>Estás decidiendo entre comprar una casa de <b>$ 300.000,00</b> con <b>20 %</b> de entrega a <b>6,5 %</b> a 30 años, o alquilar por <b>$ 1.500,00</b> al mes e invertir la diferencia. El valor de la casa y el alquiler suben 3 % por año, los costos de ser propietario son 2 % del valor por año, los costos de venta 6 % y las inversiones rinden 6 %. Comparás a 10 años.</p>
+<ol><li>Entrega inicial = $ 60.000,00; préstamo = $ 240.000,00. La cuota mensual de la hipoteca es <b>$ 1.516,96</b>.</li><li>El mes 1 como propietario cuesta $ 1.516,96 + 2 % × $ 300.000,00 ÷ 12 = $ 500,00, o sea <b>$ 2.016,96</b> por mes frente a un alquiler de <b>$ 1.500,00</b>. Quien alquila invierte la entrega de $ 60.000,00 más la diferencia mensual de $ 516,96.</li><li>A los 10 años la casa vale $ 403.175 y todavía debés $ 203.463. Se descuentan los costos de venta de 6 %.</li><li>Patrimonio si comprás: <b>$ 175.522</b>. Patrimonio si alquilás e invertís: <b>$ 173.860</b>.</li><li>Comprar queda por delante por <b>$ 1.662</b> y supera al alquiler después de unos <b>9 años 6 meses</b>.</li></ol></div></div></details><div class="faq"><h3 class="fh">Preguntas frecuentes</h3><details class="q"><summary>¿Siempre conviene comprar?</summary><div class="dc"><p>No. Depende de la relación entre precio y alquiler, de cuánto tiempo te quedás, de la tasa de la hipoteca y de lo que podrías ganar invirtiendo. En plazos cortos, los costos de comprar y vender suelen superar las ganancias.</p></div></details><details class="q"><summary>¿Qué incluyen los “costos de propietario”?</summary><div class="dc"><p>Impuestos a la propiedad, seguro de la vivienda y mantenimiento o reparaciones, que juntos suelen ser entre 1 % y 3 % del valor de la casa por año. Sumá los gastos comunes si los pagás.</p></div></details><details class="q"><summary>¿Por qué quien alquila invierte la entrega inicial?</summary><div class="dc"><p>Porque ese dinero no queda atado a la casa. Poner la misma plata a trabajar en otro lado es lo que hace comparables las dos opciones.</p></div></details><details class="q"><summary>¿Qué no está incluido?</summary><div class="dc"><p>Los impuestos sobre las ganancias de inversión, las deducciones por intereses de la hipoteca, los gastos de mudanza, los depósitos de alquiler y los cambios en tus ingresos. Usá el resultado como guía y consultá a un profesional por tu caso.</p></div></details></div></div>
+  <div class="card related">
+    <h2>Calculadoras relacionadas</h2>
+    <div class="rel"><a href="/es/calculadora-hipoteca.html"><b>Calculadora de hipoteca</b><span>Estimá tu pago mensual completo, con impuestos y seguro incluidos.</span></a><a href="/es/calculadora-interes-compuesto.html"><b>Calculadora de interés compuesto</b><span>Mirá cuánto crece tu dinero cuando los intereses empiezan a generar intereses.</span></a><a href="/es/calculadora-meta-ahorro.html"><b>Calculadora de meta de ahorro</b><span>Convertí una meta grande en un ahorro mensual alcanzable.</span></a></div>
   </div>
+
 
   <div class="ad" data-slot="bottom" aria-label="Advertisement"><!-- AdSense: bottom slot --></div>
 
   <p class="note">Esta herramienta es solo ilustrativa y no constituye asesoramiento financiero, impositivo ni legal.</p>
-  <footer><span>Calculadoras online gratis · Sin registro · Funcionan en cualquier dispositivo</span><span class="uy"><svg class="uyf" width="18" height="12" viewBox="0 0 18 12" aria-hidden="true" focusable="false"><rect width="18" height="12" fill="#fff"/><path d="M0 1.33h18M0 4h18M0 6.67h18M0 9.33h18M0 12h18" stroke="#0038a8" stroke-width="1.33" transform="translate(0,-.67)"/><rect width="7.4" height="6.67" fill="#fff"/><circle cx="3.7" cy="3.33" r="2" fill="#fcd116"/></svg>Hecho en Uruguay</span><nav aria-label="Footer"><a href="/es/">Todas las calculadoras</a><a href="/es/acerca-de.html">Acerca de</a><a href="/es/contacto.html">Contacto</a><a href="/es/politica-de-privacidad.html">Política de privacidad</a><a href="/es/terminos-de-uso.html">Términos de uso</a></nav></footer>
+  <footer><p class="disc">Solo con fines informativos y educativos. Los resultados son estimaciones y no constituyen asesoramiento financiero, fiscal ni legal.</p><span>Calculadoras online gratis · Sin registro · Funcionan en cualquier dispositivo</span><nav aria-label="Footer"><a href="/es/">Todas las calculadoras</a><a href="/es/acerca-de.html">Acerca de</a><a href="/es/contacto.html">Contacto</a><a href="/es/politica-de-privacidad.html">Política de privacidad</a><a href="/es/terminos-de-uso.html">Términos de uso</a></nav></footer>
 </div>
 
 <script>
@@ -311,5 +325,22 @@ init({render:render,copy:copy});
 
 })();
 </script>
+<script>(function(){var d=document.querySelector('#how details');document.querySelectorAll('a[href="#how"]').forEach(function(a){a.addEventListener('click',function(){if(d)d.open=true;});});if(location.hash==='#how'&&d)d.open=true;})();</script>
+<script>/*share*/(function(){var c=document.getElementById('copy');if(!c)return;var L={"s": "Compartir", "c": "¡Copiado!"},b=document.createElement('button');b.type='button';b.className='btn';b.id='share';b.textContent=L.s;c.parentNode.insertBefore(b,c.nextSibling);
+var skip=!!document.getElementById('try'),els=[].slice.call(document.querySelectorAll('.wrap input[id],.wrap select[id]')),segs=[].slice.call(document.querySelectorAll('.seg'));
+function val(e){return e.type==='checkbox'?(e.checked?'1':'0'):e.value;}
+function si(g){var bs=[].slice.call(g.querySelectorAll('button')),k=-1;bs.forEach(function(x,i){if(x.getAttribute('aria-pressed')==='true')k=i;});return k;}
+var dv=els.map(val),ds=segs.map(si);
+function mk(){var u=location.origin+location.pathname;if(skip)return u;var p=[];segs.forEach(function(g,i){var k=si(g);if(k!==ds[i])p.push('s'+i+'='+k);});els.forEach(function(e,i){var v=val(e);if(v!==dv[i])p.push(encodeURIComponent(e.id)+'='+encodeURIComponent(v));});return p.length?u+'?'+p.join('&'):u;}
+function txt(){var o=[document.querySelector('h1').textContent.trim()];[].slice.call(document.querySelectorAll('#results .stat')).slice(0,3).forEach(function(s){var l=s.querySelector('span'),v=s.querySelector('b');if(l&&v)o.push(l.textContent.trim()+': '+v.textContent.trim());});return o.join('\n');}
+b.addEventListener('click',function(){var u=mk(),t=txt();if(navigator.share){navigator.share({title:document.title,text:t,url:u}).catch(function(){});return;}var all=t+'\n'+u,done=function(){var o=b.textContent;b.textContent=L.c;setTimeout(function(){b.textContent=o;},1500);};
+if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(all).then(done,fb);}else fb();function fb(){var a=document.createElement('textarea');a.value=all;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(a);done();}});
+if(!skip&&location.search){var q=new URLSearchParams(location.search),ch=null;segs.forEach(function(g,i){var k=q.get('s'+i);if(k!==null){var bt=g.querySelectorAll('button')[+k];if(bt)bt.click();}});els.forEach(function(e){var v=q.get(e.id);if(v===null)return;if(e.type==='checkbox')e.checked=v==='1';else if(e.tagName==='SELECT'){if([].some.call(e.options,function(o){return o.value===v;}))e.value=v;else return;}else e.value=v;ch=e;});if(ch)ch.dispatchEvent(new Event('input',{bubbles:true}));}})();</script>
+<script>/*peek*/(function(){var r=document.getElementById('results');if(!r||window.innerWidth>760)return;var b=document.createElement('button');b.type='button';b.id='peek';b.setAttribute('aria-label','Results');b.innerHTML='<div><span></span><b></b></div><i aria-hidden="true">\u2193</i>';document.body.appendChild(b);
+var vis=true;function fill(){var s=r.querySelector('.stat.main')||r.querySelector('.stat');if(!s){b.style.display='none';return;}var l=s.querySelector('span'),v=s.querySelector('b');b.querySelector('span').textContent=l?l.textContent:'';b.querySelector('b').textContent=v?v.textContent:'';b.setAttribute('aria-label',(l?l.textContent:'')+': '+(v?v.textContent:''));}
+function show(){b.style.display=(!vis&&r.getBoundingClientRect().top>0&&b.querySelector('b').textContent)?'flex':'none';}
+if('IntersectionObserver' in window){new IntersectionObserver(function(e){vis=e[0].isIntersecting;show();},{threshold:0.05}).observe(r);}
+new MutationObserver(function(){fill();show();}).observe(r,{childList:true,subtree:true,characterData:true});fill();
+window.addEventListener('scroll',show,{passive:true});b.addEventListener('click',function(){r.scrollIntoView({behavior:'smooth',block:'start'});});})();</script>
 </body>
 </html>

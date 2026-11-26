@@ -83,7 +83,7 @@ input:focus,select:focus,button:focus-visible{outline:2px solid var(--accent);ou
 .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
 svg{width:100%;height:auto;display:block}
 .tbl{overflow-x:auto;-webkit-overflow-scrolling:touch}
-table{border-collapse:collapse;width:100%;min-width:440px;font-size:.88rem;font-variant-numeric:tabular-nums}
+table{border-collapse:collapse;width:100%;min-width:0;font-size:.88rem;font-variant-numeric:tabular-nums}
 th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
 th:first-child,td:first-child{text-align:left}
 th{color:var(--muted);font-weight:600;font-size:.78rem;position:sticky;top:0;background:var(--card)}
@@ -145,6 +145,8 @@ a.lc:hover .arr{color:var(--accent);transform:translateX(2px)}
 @media (max-width:600px){.hwrap{padding-top:32px}.lgrid{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){a.lc,.lc .arr{transition:none}a.lc:hover,a.lc:hover .arr{transform:none}}
 .uy{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}svg.uyf{width:18px;height:12px;border-radius:2px;box-shadow:0 0 0 1px var(--line);flex:none}.hfoot .uy{justify-content:center}
+h1,h2{overflow-wrap:break-word;hyphens:auto}
+@media(max-width:480px){th,td{padding:9px 6px!important;font-size:.82rem!important}th:first-child,td:first-child{padding-left:2px!important}}
 </style>
 </head>
 <body>
@@ -161,10 +163,10 @@ a.lc:hover .arr{color:var(--accent);transform:translateX(2px)}
   <section aria-labelledby="pick">
     <h2 class="pick" id="pick">Choose your language · Elegí tu idioma</h2>
     <nav class="lgrid" aria-label="Language">
-    <a class="lc" href="/en/" hreflang="en" lang="en"><span class="code" aria-hidden="true">EN</span><span class="t"><b>English</b><small>23 free calculators · Finance, business & everyday</small></span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5l5.5 5.5-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    <a class="lc" href="/es/" hreflang="es" lang="es"><span class="code" aria-hidden="true">ES</span><span class="t"><b>Español</b><small>23 calculadoras gratis · Finanzas, negocios y vida diaria</small></span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5l5.5 5.5-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    <a class="lc" href="/pt/" hreflang="pt" lang="pt"><span class="code" aria-hidden="true">PT</span><span class="t"><b>Português</b><small>23 calculadoras grátis · Finanças, negócios e dia a dia</small></span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5l5.5 5.5-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    <a class="lc" href="/de/" hreflang="de" lang="de"><span class="code" aria-hidden="true">DE</span><span class="t"><b>Deutsch</b><small>23 kostenlose Rechner · Finanzen, Business & Alltag</small></span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5l5.5 5.5-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="lc" href="/en/" hreflang="en" lang="en"><span class="code" aria-hidden="true">EN</span><span class="t"><b>English</b><small>26 free calculators · Finance, business & everyday</small></span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5l5.5 5.5-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="lc" href="/es/" hreflang="es" lang="es"><span class="code" aria-hidden="true">ES</span><span class="t"><b>Español</b><small>26 calculadoras gratis · Finanzas, negocios y vida diaria</small></span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5l5.5 5.5-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="lc" href="/pt/" hreflang="pt" lang="pt"><span class="code" aria-hidden="true">PT</span><span class="t"><b>Português</b><small>26 calculadoras grátis · Finanças, negócios e dia a dia</small></span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5l5.5 5.5-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="lc" href="/de/" hreflang="de" lang="de"><span class="code" aria-hidden="true">DE</span><span class="t"><b>Deutsch</b><small>26 kostenlose Rechner · Finanzen, Business & Alltag</small></span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5l5.5 5.5-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </nav>
   </section>
 

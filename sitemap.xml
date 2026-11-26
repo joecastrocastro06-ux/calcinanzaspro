@@ -904,4 +904,100 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://calcfinanzaspro.com/de/nutzungsbedingungen.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://calcfinanzaspro.com/en/terms-of-use.html"/>
   </url>
+  <url>
+    <loc>https://calcfinanzaspro.com/en/financial-freedom-calculator.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://calcfinanzaspro.com/en/financial-freedom-calculator.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://calcfinanzaspro.com/es/calculadora-libertad-financiera.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://calcfinanzaspro.com/pt/calculadora-liberdade-financeira.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://calcfinanzaspro.com/de/finanzielle-freiheit-rechner.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://calcfinanzaspro.com/en/financial-freedom-calculator.html"/>
+  </url>
+  <url>
+    <loc>https://calcfinanzaspro.com/es/calculadora-libertad-financiera.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://calcfinanzaspro.com/en/financial-freedom-calculator.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://calcfinanzaspro.com/es/calculadora-libertad-financiera.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://calcfinanzaspro.com/pt/calculadora-liberdade-financeira.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://calcfinanzaspro.com/de/finanzielle-freiheit-rechner.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://calcfinanzaspro.com/en/financial-freedom-calculator.html"/>
+  </url>
+  <url>
+    <loc>https://calcfinanzaspro.com/pt/calculadora-liberdade-financeira.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://calcfinanzaspro.com/en/financial-freedom-calculator.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://calcfinanzaspro.com/es/calculadora-libertad-financiera.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://calcfinanzaspro.com/pt/calculadora-liberdade-financeira.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://calcfinanzaspro.com/de/finanzielle-freiheit-rechner.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://calcfinanzaspro.com/en/financial-freedom-calculator.html"/>
+  </url>
+  <url>
+    <loc>https://calcfinanzaspro.com/de/finanzielle-freiheit-rechner.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://calcfinanzaspro.com/en/financial-freedom-calculator.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://calcfinanzaspro.com/es/calculadora-libertad-financiera.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://calcfinanzaspro.com/pt/calculadora-liberdade-financeira.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://calcfinanzaspro.com/de/finanzielle-freiheit-rechner.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://calcfinanzaspro.com/en/financial-freedom-calculator.html"/>
+  </url>
+  <url>
+    <loc>https://calcfinanzaspro.com/en/compare-two-loans-calculator.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://calcfinanzaspro.com/en/compare-two-loans-calculator.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://calcfinanzaspro.com/es/calculadora-comparar-prestamos.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://calcfinanzaspro.com/pt/calculadora-comparar-emprestimos.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://calcfinanzaspro.com/de/kredite-vergleichen-rechner.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://calcfinanzaspro.com/en/compare-two-loans-calculator.html"/>
+  </url>
+  <url>
+    <loc>https://calcfinanzaspro.com/es/calculadora-comparar-prestamos.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://calcfinanzaspro.com/en/compare-two-loans-calculator.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://calcfinanzaspro.com/es/calculadora-comparar-prestamos.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://calcfinanzaspro.com/pt/calculadora-comparar-emprestimos.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://calcfinanzaspro.com/de/kredite-vergleichen-rechner.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://calcfinanzaspro.com/en/compare-two-loans-calculator.html"/>
+  </url>
+  <url>
+    <loc>https://calcfinanzaspro.com/pt/calculadora-comparar-emprestimos.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://calcfinanzaspro.com/en/compare-two-loans-calculator.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://calcfinanzaspro.com/es/calculadora-comparar-prestamos.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://calcfinanzaspro.com/pt/calculadora-comparar-emprestimos.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://calcfinanzaspro.com/de/kredite-vergleichen-rechner.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://calcfinanzaspro.com/en/compare-two-loans-calculator.html"/>
+  </url>
+  <url>
+    <loc>https://calcfinanzaspro.com/de/kredite-vergleichen-rechner.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://calcfinanzaspro.com/en/compare-two-loans-calculator.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://calcfinanzaspro.com/es/calculadora-comparar-prestamos.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://calcfinanzaspro.com/pt/calculadora-comparar-emprestimos.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://calcfinanzaspro.com/de/kredite-vergleichen-rechner.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://calcfinanzaspro.com/en/compare-two-loans-calculator.html"/>
+  </url>
+  <url>
+    <loc>https://calcfinanzaspro.com/en/uruguay-net-salary-calculator.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://calcfinanzaspro.com/en/uruguay-net-salary-calculator.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://calcfinanzaspro.com/es/calculadora-sueldo-liquido-uruguay.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://calcfinanzaspro.com/pt/calculadora-salario-liquido-uruguai.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://calcfinanzaspro.com/de/uruguay-nettogehalt-rechner.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://calcfinanzaspro.com/en/uruguay-net-salary-calculator.html"/>
+  </url>
+  <url>
+    <loc>https://calcfinanzaspro.com/es/calculadora-sueldo-liquido-uruguay.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://calcfinanzaspro.com/en/uruguay-net-salary-calculator.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://calcfinanzaspro.com/es/calculadora-sueldo-liquido-uruguay.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://calcfinanzaspro.com/pt/calculadora-salario-liquido-uruguai.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://calcfinanzaspro.com/de/uruguay-nettogehalt-rechner.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://calcfinanzaspro.com/en/uruguay-net-salary-calculator.html"/>
+  </url>
+  <url>
+    <loc>https://calcfinanzaspro.com/pt/calculadora-salario-liquido-uruguai.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://calcfinanzaspro.com/en/uruguay-net-salary-calculator.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://calcfinanzaspro.com/es/calculadora-sueldo-liquido-uruguay.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://calcfinanzaspro.com/pt/calculadora-salario-liquido-uruguai.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://calcfinanzaspro.com/de/uruguay-nettogehalt-rechner.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://calcfinanzaspro.com/en/uruguay-net-salary-calculator.html"/>
+  </url>
+  <url>
+    <loc>https://calcfinanzaspro.com/de/uruguay-nettogehalt-rechner.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://calcfinanzaspro.com/en/uruguay-net-salary-calculator.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://calcfinanzaspro.com/es/calculadora-sueldo-liquido-uruguay.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://calcfinanzaspro.com/pt/calculadora-salario-liquido-uruguai.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://calcfinanzaspro.com/de/uruguay-nettogehalt-rechner.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://calcfinanzaspro.com/en/uruguay-net-salary-calculator.html"/>
+  </url>
 </urlset>
